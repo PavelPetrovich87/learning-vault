@@ -4,7 +4,12 @@ This file defines the structure, conventions, and rules for any AI agent interac
 
 ## Vault Overview
 
-This is a **personal technical learning vault** dedicated to deep knowledge management for a Senior Software Engineer. Content is primarily in **English**, communication with the user is in **Russian**.
+This is a **personal technical learning vault** dedicated to deep knowledge management for a Senior Software Engineer. Communication with the user is in **Russian**.
+
+### Language policy (bilingual by zone)
+- **Concept notes, flashcards, evergreen reference** → English (these are long-lived reference material).
+- **Working zones** (`research_in_progress/`, `project_august/`, `daily-plans/`, `Заметки на будущее/`, `harness_engineering/planning/`) → **bilingual: Russian or English**, author's choice. These are living documents, not reference artifacts.
+- **Templates** → English for structure; Russian is fine inside callouts/placeholders if that matches how the author drafts.
 
 ---
 
@@ -12,25 +17,31 @@ This is a **personal technical learning vault** dedicated to deep knowledge mana
 
 | Directory | Purpose | Agent Action |
 |-----------|---------|--------------|
-| `research_in_progress/` | **Active research notes.** Article analysis, deep dives, experiments, PoC ideas. One document per research thread. | Create research notes here using `Templates/Research-to-Project.md`. |
-| `System Design interview/concept_notes/` | **System Design & Architecture** concepts — evergreen notes on distributed systems, scalability, patterns. | Create system-design-specific concept notes here. |
-| `Backend/` | Backend engineering learning modules. Contains topic-specific subfolders (e.g., `Nest.js/`). | Create backend/API concept notes in the relevant module folder. |
-| `Backend/Nest.js/` | NestJS framework concepts, CLI usage, architecture, and patterns. | Create NestJS evergreen notes using `Templates/Technical-Deep-Dive.md`. |
+| `research_in_progress/` | **Active research notes.** Article analysis, deep dives, experiments, PoC ideas. One document per research thread. | Create research notes here using `Templates/Research-to-Project Template.md`. |
+| `System Design interview/` | **System Design & Architecture** — evergreen concept notes and flashcards on distributed systems, scalability, patterns. NOT tied to the Udemy course. | Read `System Design interview/AGENTS.md`. Create concept notes in `concept_notes/` (use `Templates/Technical-Deep-Dive.md`), flashcards in `flash_cards/`. |
+| `Backend/` | Backend engineering learning modules. Contains topic-specific subfolders (e.g., `Nest.js/`, `Microservices/`). | Create backend/API concept notes in the relevant module folder. |
+| `Backend/Nest.js/` | NestJS framework concepts, CLI usage, architecture, and patterns. The canonical home for ALL NestJS notes (do not use a root-level `NestJS/` folder). | Create NestJS evergreen notes using `Templates/Technical-Deep-Dive.md`. |
 | `Backend/Microservices/` | Backend architecture & design concept notes (Clean Architecture, Hexagonal Architecture, DDD). | Create architecture-specific concept notes here; group related topics into subfolders such as `Hexagonal Architecture/`. |
 | `Backend/Microservices/Hexagonal Architecture/examples/` | Runnable code examples for Hexagonal Architecture concepts. Each project is self-contained and includes a README with run instructions. | Create a new subfolder per example project inside the relevant topic folder. Link back to related concept notes in README. |
-| `Backend/Nest.js/flashcards/` | NestJS spaced repetition flashcards. | Generate from NestJS concept notes using Obsidian SR syntax. |
 | `Business Analysis/` | Business analysis, requirements engineering, domain modeling, and process design. | Create BA-related concept notes here using the appropriate template. |
-| `System Design interview/flash_cards/` | Spaced Repetition flashcards in Obsidian SR syntax. | Generate flashcards from concept notes and research notes. |
-| `system-design-udemy/` | **Udemy System Design Course** material — research notes, concepts, and flashcards tied to the course. | Default location for all system-design course notes unless user specifies otherwise. |
-| `DEVOPS/` | **Udemy DevOps Course** material — research notes, concepts, and flashcards tied to the course. | Read `DEVOPS/AGENTS.md` for subfolder conventions and templates. |
-| `Заметки на будущее/` | **Raw ideas, brainstorming fragments, quick thoughts.** Low structure, high entropy. | Place ephemeral ideas here. Do NOT place structured research here. |
+| `system-design-udemy/` | **Udemy System Design Course** material — research notes, concepts, and flashcards tied to the course. | Read `system-design-udemy/AGENTS.md`. Default location for all system-design course notes unless user specifies otherwise. |
+| `DEVOPS/` | **Udemy DevOps Course** material plus general CI/CD concepts. Topic subfolders (`linux/`, `ci-cd/`) each contain `concept_notes/` + `flash_cards/`. | Read `DEVOPS/AGENTS.md` for subfolder conventions and templates. |
+| `DEVOPS/ci-cd/` | CI/CD, GitHub Actions, deployment, visual regression (Chromatic). | Non-Udemy CI/CD concept notes go here (in `concept_notes/`). |
+| `agentic_ai/` | Agentic AI concepts, patterns, and implementation guides for LLM-based agents. Subfolders: `patterns/`, `llm_fundamentals/`, `memory_and_state/`, `tool_use_and_mcp/`, `observability/`, `tooling/`, `OpenAI SDK/`. | LLM-observability notes (Langfuse, prompt ops, eval) go in `observability/`. |
+| `Modeling Software Architecture/` | Software architecture modeling concepts (C4, system context, etc.). | Create modeling concept notes here. |
+| `git/` | Git internals, advanced workflows, shadow trees. Concept notes in `git/concept_notes/`. | Create git concept notes here. |
+| `playwright/` | Playwright end-to-end testing — architecture, patterns, CI/CD integration, debugging, and tooling. | Read `playwright/AGENTS.md` for subfolder conventions and templates. |
+| `harness_engineering/` | Project-specific notes for the harness engineering project: `open_ai_article/`, `designing-css-architecture/`, `learning/`, `planning/` (RFCs, plans, specs). | Project planning docs go in `harness_engineering/planning/`. |
+| `project_august/` | Project-specific notes (roadmaps, research prompts, methodology). | — |
+| `daily-plans/` | Daily planning and review notes (one file per day). **Exception zone:** lightweight frontmatter only (`date`, `type`, `created`, `updated`); no `status`/`tags`/`mastery` required. | Use `Templates/Daily-Plan-and-Review.md`. |
+| `Заметки на будущее/` | **Raw ideas, brainstorming fragments, quick thoughts.** Low structure, high entropy. | Place ephemeral ideas here using `Templates/Future-Note.md`. Do NOT place structured research here. |
 | `Templates/` | Note templates. | Use appropriate template when creating notes. |
-| `articles_to_analyze/` | External articles and documents pending analysis. | Read from here, but do NOT create new notes here. |
-| `books/` | Book notes and summaries. | — |
-| `agentic_ai/` | Agentic AI concepts, patterns, and implementation guides for LLM-based agents. Use subfolders like `patterns/`, `llm_fundamentals/`, `memory_and_state/`, `tool_use_and_mcp/`, `observability/` to group related topics.
-| `harness_engineering/` | Project-specific notes for the harness engineering project. | — |
-| `playwright/` | Playwright end-to-end testing — architecture, patterns, CI/CD integration, debugging, and tooling. | Read `playwright/AGENTS.md` for subfolder conventions and templates.
-| `project_august/` | Project-specific notes. | — |
+| `articles_to_analyze/` | External articles and documents pending analysis (input only — `.docx`, `.pdf`, source articles). | Read from here, but do NOT create new notes here. |
+| `books/` | Book source files (PDFs, docx) and summaries. | Add `.md` summaries when reading a book. |
+| `projects/` | Project card templates (`project_cards/`). | — |
+| `Skill Creation/` | Notes on authoring agent skills (description structure, context models). | — |
+| `Self-hypnosis-app-DDD/` | DDD exploration for the self-hypnosis app project. | — |
+| `_reference/` | **EXCLUDED ZONE.** Cloned external reference repositories (claude-code source, opendev, agent-architecture-atlas, etc.). NOT vault notes. | Do NOT apply any vault convention here. Do NOT edit, link, or count these files. Gitignored. |
 
 ---
 
@@ -78,17 +89,24 @@ All notes MUST include frontmatter:
 
 ```yaml
 ---
-status: researching | analyzing | brainstorming | implemented | archived
+status: researching | analyzing | brainstorming | experimenting | implemented | archived
 tags: [tag1, tag2]
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
 ```
 
-- `status`: Current state of the note.
+- `status`: **Work lifecycle** of the note. Allowed values: `researching | analyzing | brainstorming | experimenting | implemented | archived`. Required on all notes except exception zones (see below).
+- `mastery`: **Learning progress** of the author for this topic. Optional, concept notes only. Allowed values: `beginner | growing | mastered`. Use this instead of overloading `status` (e.g., the old `status: new`/`growing` were this concept misfiled).
 - `tags`: Relevant topic tags. Research notes should include `[research, in-progress]`.
-- `created`: Date of creation.
-- `updated`: Date of last modification (update on every edit).
+- `created`: Date of creation (`YYYY-MM-DD`).
+- `updated`: Date of last modification. **Update on every edit.**
+
+### Exception zones (lighter frontmatter)
+The following zones do NOT require `status`/`tags`/`mastery` because they are not reference notes:
+- `daily-plans/` — needs only `date`, `type`, `created`, `updated`.
+- `System Design interview/flash_cards/`, `system-design-udemy/**/flash_cards/`, `DEVOPS/**/flash_cards/` — flashcards are SR cards; frontmatter optional (a `Source: [[note]]` link at top is preferred over frontmatter).
+- `_reference/` — fully excluded, see above.
 
 ---
 
@@ -107,10 +125,13 @@ updated: YYYY-MM-DD
 
 1. **Do NOT move notes between folders to "ripen" them.** Create new notes and link back.
 2. **Do NOT create research notes in `Заметки на будущее/`.** That's for raw ideas only.
-3. **Do NOT create flashcards outside designated flash_cards folders.** Use `System Design interview/flash_cards/` for general system-design topics, and `system-design-udemy/flash_cards/` for Udemy course flashcards.
+3. **Do NOT create flashcards outside designated `flash_cards/` folders.** Use `System Design interview/flash_cards/`, `system-design-udemy/**/flash_cards/`, or `DEVOPS/**/flash_cards/`. Flashcard files MUST end in `.md` (no extensionless files).
 4. **Do NOT split a research thread into multiple files by phase.** Keep it in one note.
 5. **Do NOT use corporate speak.** Speak like a senior engineer talking to a colleague.
-6. **Do NOT write in Russian in vault files.** All technical content is in English; communication with the user is in Russian.
+6. **Do NOT pre-create empty "placeholder" folders.** Only create a folder when you have content for it. (Empty top-level folders `AI-Core/`, `Learning_notes/` pre-date this rule and are pending either content or deletion.)
+7. **Do NOT create duplicate copies of a note across folders.** One canonical home per note; link to it with `[[WikiLinks]]` instead of copying.
+8. **Do NOT overload `status` with learning-progress values** (`new`, `growing`, `mastered`). Use the separate `mastery` field for that.
+9. **Language:** Concept notes, flashcards, and evergreen reference MUST be in English (anti-pattern #6 from prior revision is relaxed for working zones — see Language policy above).
 
 ---
 
@@ -132,7 +153,13 @@ updated: YYYY-MM-DD
 | `CLAUDE.md` | Personality, tone, and style guidelines for Claude specifically. |
 | `DDD_CONTEXT.md` | Domain-Driven Design context for specific projects. |
 | `GEMINI.md` | Guidelines for Gemini interactions (if applicable). |
+| `DEVOPS/AGENTS.md` | DevOps folder sub-conventions. |
+| `system-design-udemy/AGENTS.md` | Udemy SD course sub-conventions. |
+| `System Design interview/AGENTS.md` | System Design evergreen notes sub-conventions. |
+| `Backend/AGENTS.md` | Backend modules sub-conventions. |
+| `Modeling Software Architecture/AGENTS.md` | Architecture modeling sub-conventions. |
+| `playwright/AGENTS.md` | Playwright sub-conventions. |
 
 ---
 
-*Last updated: 2026-07-01*
+*Last updated: 2026-07-03*
