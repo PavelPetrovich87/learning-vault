@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [crdt, yjs, collaboration, real-time, distributed-systems, ot, conflict-resolution]
 source: Y.js docs, CRDT papers, "CRDTs and the Quest for Distributed Consistency" by Marc Shapiro, various deep-dives
 created: 2026-06-05
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

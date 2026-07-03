@@ -1,5 +1,5 @@
 ---
-status: active
+status: analyzing
 study_status: in_progress
 tags: [langfuse, llm, observability, prompt-management, evaluation, ai-ops, skill-testing-framework]
 source: "Skill Testing Framework project — вводная лекция по Langfuse"

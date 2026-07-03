@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [dependency-inversion, solid, hexagonal-architecture, clean-architecture, software-architecture, backend]
 source: Robert C. Martin - SOLID Principles / Clean Architecture
 created: 2026-06-29

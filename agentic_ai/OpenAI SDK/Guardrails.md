@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-ai, openai, agents-sdk, guardrails, evergreen]
 source: OpenAI Agents SDK Official Documentation
 created: 2026-06-25

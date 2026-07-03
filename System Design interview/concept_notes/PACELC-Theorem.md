@@ -1,8 +1,10 @@
 ---
-status: growing
+status: analyzing
+mastery: growing
 tags: [system-design, distributed-systems, theory]
 source: "Daniel Abadi, 2010"
 created: 2026-03-09
+updated: 2026-07-03
 difficulty: advanced
 ---
 

@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [harness-engineering, ai-agents, architecture, feedback-systems]
 source: Zetsubo (Dev.to) — CSS Architecture in the AI Agent Era series
 created: 2026-03-25
+updated: 2026-07-03
 difficulty: beginner
 ---
 

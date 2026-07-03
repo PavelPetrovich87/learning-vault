@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [harness-engineering, architectural-constraints, frontend-architecture, backend-architecture, self-enforcing-repository, agentic-workflows]
 source: Synthesis of existing architecture taxonomy + Harness Engineering principles
 created: 2026-06-08
+updated: 2026-07-03
 difficulty: advanced
 ---
 

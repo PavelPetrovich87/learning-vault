@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [ddd, hexagonal, architecture, concurrency, frontend]
 source: User Resume/Gemini Summary
 created: 2026-03-09
+updated: 2026-07-03
 difficulty: advanced
 ---
 

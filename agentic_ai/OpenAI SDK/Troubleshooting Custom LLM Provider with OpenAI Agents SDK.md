@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [openai-agents, custom-provider, troubleshooting, asyncio, minimax, model-prefix]
 source: Ed Donner's Agentic AI Course — Lab 2 (Week 2 Day 2)
 created: 2026-06-29

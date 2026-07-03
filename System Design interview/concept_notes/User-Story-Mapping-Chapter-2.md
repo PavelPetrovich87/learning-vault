@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agile, product-management, user-story-mapping, mvp]
 source: User Story Mapping (Jeff Patton) - Chapter 2
 created: 2026-03-26
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

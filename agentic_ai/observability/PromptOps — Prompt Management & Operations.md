@@ -1,5 +1,5 @@
 ---
-status: active
+status: analyzing
 study_status: in_progress
 tags: [langfuse, prompt-ops, prompt-engineering, llm-ops, devops, langfuse-phase-1]
 source: "Лекция по Langfuse — Фаза 1 Prompt Management"

@@ -1,8 +1,10 @@
 ---
-status: growing
+status: analyzing
+mastery: growing
 tags: [system-design, distributed-systems, theory]
 source: "Brewers CAP Theorem, 2000"
 created: 2026-03-09
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

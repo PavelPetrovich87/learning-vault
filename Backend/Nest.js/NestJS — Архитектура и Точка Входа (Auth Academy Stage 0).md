@@ -1,8 +1,10 @@
 ---
-status: learning
+status: analyzing
+mastery: beginner
 tags: [nestjs, typescript, architecture, auth-academy, fundamentals]
 source: Auth Academy Project — Stage 0
 created: 2026-06-13
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

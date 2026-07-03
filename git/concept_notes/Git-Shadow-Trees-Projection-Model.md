@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [git, architecture, agentic-workflows, concurrency]
 source: Architectural Pattern (Advanced)
 created: 2026-03-19
+updated: 2026-07-03
 difficulty: advanced
 ---
 

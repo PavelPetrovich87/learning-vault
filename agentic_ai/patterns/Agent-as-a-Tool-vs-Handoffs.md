@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-ai, patterns, openai, tools, handoffs, delegation]
 source: 
 created: 2026-06-27

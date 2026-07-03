@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-engineering, autonomous-software, mental-models, ai]
 source: https://ghuntley.com/loop/ (Geoffrey Huntley)
 created: 2026-03-18
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

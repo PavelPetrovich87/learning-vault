@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [nest-js, cli, backend, typescript]
 source: https://docs.nestjs.com/cli/overview
 created: 2026-06-27

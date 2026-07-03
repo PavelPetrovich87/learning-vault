@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [domain-driven-design, ddd, application-service, use-case-layer, backend]
 source: Eric Evans - Domain-Driven Design, Vaughn Vernon - Implementing Domain-Driven Design
 created: 2026-06-26
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

@@ -1,8 +1,10 @@
 ---
-status: growing
+status: analyzing
+mastery: growing
 tags: [system-design, distributed-systems, databases, scaling]
 source: "System Design Interview – An Insider's Guide (Alex Xu)"
 created: 2026-03-09
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

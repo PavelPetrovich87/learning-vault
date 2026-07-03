@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [hexagonal-architecture, ports-and-adapters, software-architecture, backend]
 source: Alistair Cockburn - Hexagonal Architecture (Ports and Adapters)
 created: 2026-06-26
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

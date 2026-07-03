@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [nest-js, validation, class-validator, decorators, dto]
 source: https://github.com/typestack/class-validator
 created: 2026-06-30

@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-ai, openai, sdk, overview, tools]
 source: 
 created: 2026-06-27

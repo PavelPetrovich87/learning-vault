@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [hexagonal-architecture, primary-adapter, driving-adapter, ports-and-adapters, backend]
 source: Hexagonal Architecture / Ports and Adapters
 created: 2026-06-29

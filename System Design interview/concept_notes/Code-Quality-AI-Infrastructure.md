@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [ai-engineering, code-quality, agentic-workflows, software-architecture]
 source: https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code (Steve Krenzel)
 created: 2026-03-18
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

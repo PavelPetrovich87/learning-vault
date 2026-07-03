@@ -1,7 +1,9 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-ai, llm, structured-output, reasoning, prompting, pattern]
 created: 2026-07-02
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [process, workflow, harness, development-methodology, focus]
 source: Personal insight from daily retro 2026-06-05
 created: 2026-06-05

@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-ai, llm, tool-registry, decorator, patterns, evergreen]
 source: Lab 4 "Professionally You" — Agentic Engineering
 created: 2026-06-24

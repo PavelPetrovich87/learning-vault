@@ -1,7 +1,9 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [nestjs, backend, initialization, learning]
 created: 2026-06-23
+updated: 2026-07-03
 ---
 
 # NestJS Project Initialization

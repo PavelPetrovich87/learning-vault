@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [api-design, rest, backend, system-design, http]
 source: 
 created: 2026-06-22

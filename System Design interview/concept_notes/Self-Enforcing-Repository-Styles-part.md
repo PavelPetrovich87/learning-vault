@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [harness-engineering, ai-agents, architecture, meta-synthesis]
 source: Synthesis of Bitloops (Architectural Constraints), Refine.dev (AI-First UIs), Zetsubo (Feedback Systems)
 created: 2026-03-25
+updated: 2026-07-03
 difficulty: beginner
 ---
 

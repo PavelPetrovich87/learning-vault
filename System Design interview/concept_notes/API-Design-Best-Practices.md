@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [system-design, api-design, rest, graphql, grpc, interview-prep, backend, best-practices]
 source: https://www.oreilly.com/library/view/api-design-patterns/9781617295850/
 created: 2026-06-24

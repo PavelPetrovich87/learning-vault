@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [skills, harness, framework-design, philosophy, reusability]
 source: Personal insight from Harness skill development, 2026-06-07
 created: 2026-06-07

@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [flashcards, system-design, sizing, estimation]
 created: 2026-06-24
 updated: 2026-06-24

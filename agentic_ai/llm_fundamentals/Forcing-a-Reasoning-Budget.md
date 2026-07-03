@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-ai, reasoning, prompting, llm, budget]
 source: 
 created: 2026-06-28

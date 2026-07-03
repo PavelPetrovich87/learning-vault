@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [nest-js, pipes, validation, decorators, dto]
 source: https://docs.nestjs.com/pipes
 created: 2026-06-30

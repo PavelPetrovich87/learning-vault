@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [nodejs, backend, javascript, v8, libuv, event-loop, runtime, bun]
 source: Node.js official docs, libuv docs, "Node.js Design Patterns" by Mario Casciaro, various deep-dive articles
 created: 2026-06-05
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

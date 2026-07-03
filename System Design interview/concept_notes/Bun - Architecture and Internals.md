@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [bun, javascript, typescript, runtime, zig, javascriptcore, backend, nodejs]
 source: Bun official docs (bun.sh), GitHub bun repository, various benchmarks and deep-dive articles
 created: 2026-06-05
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

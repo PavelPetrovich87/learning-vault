@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [design-patterns, adapter, integration, architecture]
 created: 2026-06-20
 updated: 2026-06-20

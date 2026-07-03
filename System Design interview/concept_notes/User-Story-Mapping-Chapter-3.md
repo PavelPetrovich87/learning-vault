@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [product-discovery, agile, validated-learning, user-stories]
 source: "User Story Mapping - Chapter 3: Plan to Learn Faster"
 created: 2026-04-03
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

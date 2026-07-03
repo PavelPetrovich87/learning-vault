@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [system-design, latency, performance, sre, architecture, optimization, interview, observability]
 source: Google SRE Book, "Designing Data-Intensive Applications" by Martin Kleppmann, AWS Well-Architected Framework, various SRE blogs
 created: 2026-06-05
+updated: 2026-07-03
 difficulty: advanced
 ---
 

@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-ai, structured-output, llm, schema, validation]
 source: 
 created: 2026-06-23

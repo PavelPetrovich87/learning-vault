@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-engineering, harness-engineering, ci-cd, merge-philosophy, application-legibility]
 source: OpenAI (Harness Engineering) + Supplemental Analysis
 created: 2026-03-18
+updated: 2026-07-03
 difficulty: advanced
 ---
 

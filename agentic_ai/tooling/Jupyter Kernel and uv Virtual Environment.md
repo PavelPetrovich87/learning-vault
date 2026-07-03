@@ -1,5 +1,6 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-ai, jupyter, uv, venv, kernel, environment, python]
 created: 2026-06-29
 updated: 2026-06-29

@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [clean-architecture, hexagonal-architecture, entities, domain-driven-design, backend]
 source: Clean Architecture / Hexagonal Architecture / Domain-Driven Design
 created: 2026-06-26
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

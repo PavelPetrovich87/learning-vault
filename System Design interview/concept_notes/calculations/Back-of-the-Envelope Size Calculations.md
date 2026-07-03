@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [system-design, sizing, estimation, calculations, interview-prep, throughput, back-of-envelope]
 source: https://systemdesignsandbox.com/learn/size-calculation
 created: 2026-06-23
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

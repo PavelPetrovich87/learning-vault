@@ -1,7 +1,9 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [skills, trigger-clarity, description, anthropic, docx, pattern-mining]
 created: 2026-06-15
+updated: 2026-07-03
 difficulty: intermediate
 ---
 

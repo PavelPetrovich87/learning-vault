@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [agentic-engineering, harness-engineering, architectural-constraints]
 source: OpenAI Blog (Harness Engineering)
 created: 2026-03-18
+updated: 2026-07-03
 difficulty: advanced
 ---
 

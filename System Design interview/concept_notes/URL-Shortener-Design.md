@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: [system-design, url-shortener, scalability]
 source: Chapter 8 - System Design Interview
 created: 2026-04-03
+updated: 2026-07-03
 difficulty: intermediate
 ---
 
