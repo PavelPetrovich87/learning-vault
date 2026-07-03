@@ -1,7 +1,8 @@
 ---
 date: {{date}}
-type: mixed
-created: {{date}} {{time}}
+type: daily-plan
+created: {{date}}
+updated: {{date}}
 ---
 
 # 📅 Daily Plan: {{date}}

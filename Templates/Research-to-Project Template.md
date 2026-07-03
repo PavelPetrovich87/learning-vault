@@ -1,14 +1,8 @@
 ---
-status: new
-created: 2026-06-04
----
-
-# Research-to-Project Template
-
----
 status: researching
 tags: [research, in-progress]
 created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 source:
   title:
   author:

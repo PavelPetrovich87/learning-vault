@@ -1,8 +1,10 @@
 ---
-status: new
+status: analyzing
+mastery: beginner
 tags: []
-source: 
+source:
 created: {{date}}
+updated: {{date}}
 difficulty: beginner
 ---
 
@@ -63,4 +65,4 @@ const example = () => {
 1. **Never Copy-Paste:** If you find yourself copying documentation, stop. Read, close the tab, and write it from memory.
 2. **Iterate:** Fill the 'ELI5' and 'Analogy' first. If you can't explain it simply, you don't understand it yet.
 3. **The "Why" is King:** Seniority is defined by knowing *when* and *why* to use a tool, not just *how*.
-4. **Update the Status:** Move from `new` -> `growing` -> `mastered` as you apply this in real projects.
+4. **Update the Status:** `status` tracks the *work* lifecycle (`analyzing` → `experimenting` → `implemented` → `archived`). Separately, `mastery` tracks your *learning* progress: `beginner` → `growing` → `mastered`. Bump `mastery` as you apply this in real projects.

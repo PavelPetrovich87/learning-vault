@@ -2,6 +2,7 @@
 status: brainstorming
 tags: [future, thought-fragment]
 created: {{date}}
+updated: {{date}}
 ---
 
 # 💡 Идея: {{title}}
