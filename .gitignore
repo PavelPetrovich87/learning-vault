@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+._*
+
+# Obsidian local state (cache/workspace — not vault content)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+
+# Node / cloned external repos (isolated under _reference/, not vault notes)
+node_modules/
+
+# Lockfiles / tooling artifacts
+skills-lock.json
+
+# Binary build artifacts
+*.zip
