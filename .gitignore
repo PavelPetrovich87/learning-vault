@@ -11,6 +11,11 @@
 # Node / cloned external repos (isolated under _reference/, not vault notes)
 node_modules/
 
+# Cloned external reference repos (~335 MB, re-cloneable from remotes)
+# Keep only the README marker; ignore the actual repo contents
+_reference/*
+!/_reference/README.md
+
 # Lockfiles / tooling artifacts
 skills-lock.json
 
