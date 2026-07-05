@@ -1,0 +1,16 @@
+{
+  "userIgnoreFilters": [
+    "_reference/",
+    "node_modules/",
+    ".kilocode/",
+    "CC_leaked/"
+  ],
+  "newFileLocation": "current",
+  "newFileFolderPath": "research_in_progress",
+  "attachmentFolderPath": "attachments",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "trashOption": "system",
+  "promptDelete": true
+}
