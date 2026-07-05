@@ -16,6 +16,9 @@ node_modules/
 _reference/*
 !/_reference/README.md
 
+# Book source files (PDFs, docx, dmg — large binaries, not vault notes)
+books/*
+
 # Lockfiles / tooling artifacts
 skills-lock.json
 
