@@ -2,7 +2,7 @@
 status: researching
 tags: [c4-model, architecture, mental-model, learning, udemy, fundamentals]
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-10
 difficulty: beginner
 ---
 
@@ -83,7 +83,7 @@ graph LR
 
 ## 🔗 Deep Connections
 - **Parent Topic:** [[Learning]], [[Cognitive Load]], [[Software Architecture]], [[Modeling Software Architecture]]
-- **Related Concepts:** [[Model]], [[System]], [[System Modeling]], [[C4 Model]], [[Diagram]], [[Abstraction]], [[Analogy]], [[Cognitive Load Theory]]
+- **Related Concepts:** [[Levels of Abstraction]] (Enterprise/Solution/System as three zoom levels — a concrete application of abstraction as compression), [[Model]], [[System]], [[System Modeling]], [[C4 Model]], [[Diagram]], [[Abstraction]], [[Analogy]], [[Cognitive Load Theory]]
 - **Prerequisites:** [[Model]], [[System]]
 
 ## ❓ Active Recall Questions

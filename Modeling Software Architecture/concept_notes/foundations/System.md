@@ -2,7 +2,7 @@
 status: researching
 tags: [c4-model, architecture, system, udemy, fundamentals]
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-10
 difficulty: beginner
 ---
 
@@ -72,7 +72,7 @@ A complete description of a system usually covers three aspects:
 
 ## 🔗 Deep Connections
 - **Parent Topic:** [[Software Architecture]], [[Modeling Software Architecture]]
-- **Related Concepts:** [[Model]], [[C4 Model]], [[System Context]], [[Container]], [[Component]], [[Actor]], [[External System]]
+- **Related Concepts:** [[Context Viewpoint]] (a context diagram *defines* a system's boundary — see System Context, C4 L1), [[Key Elements of Architecture View]] (components, connectors, and configuration — the building blocks a System is made of), [[Levels of Abstraction]] (the System level is the most zoomed-in of the three — Enterprise, Solution, System), [[Model]], [[C4 Model]], [[Container Viewpoint]], [[Component Viewpoint]], [[Actor]], [[External System]]
 - **Prerequisites:** [[Model]]
 
 ## ❓ Active Recall Questions

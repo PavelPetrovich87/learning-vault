@@ -2,7 +2,7 @@
 status: researching
 tags: [c4-model, architecture, modeling, system-modeling, udemy, fundamentals]
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-10
 difficulty: beginner
 ---
 
@@ -74,6 +74,7 @@ graph LR
 - Focuses on behavior, inputs, outputs, and value delivered rather than internal structure.
 - Often represented with use case diagrams, user story maps, process flows, or sequence diagrams.
 - Helps answer: "What can the system do, and who does it serve?"
+- See [[Functional Viewpoint]] for the focused treatment of capabilities, use cases, and how this maps onto C4.
 
 ### 6. Architectural Modeling
 *Describing how the system is organized and built to satisfy its functional and non-functional requirements.*
@@ -94,7 +95,7 @@ graph LR
 
 ## 🔗 Deep Connections
 - **Parent Topic:** [[Software Architecture]], [[Modeling Software Architecture]]
-- **Related Concepts:** [[Model]], [[System]], [[C4 Model]], [[Viewpoint]], [[Perspective]], [[Diagram]], [[Abstraction]], [[Functional Modeling]], [[Architectural Modeling]]
+- **Related Concepts:** [[Model]], [[System]], [[C4 Model]], [[Viewpoint]], [[Perspective]], [[Diagram]], [[Abstraction]], [[Functional Viewpoint]], [[Architectural Modeling]]
 - **Prerequisites:** [[Model]], [[System]]
 
 ## ❓ Active Recall Questions

@@ -2,7 +2,7 @@
 status: researching
 tags: [c4-model, architecture, system-architecture, udemy, fundamentals]
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-10
 difficulty: beginner
 ---
 
@@ -49,11 +49,13 @@ graph LR
 *The major building blocks of the system.*
 - Systems, subsystems, containers, services, modules, databases, clients, and external integrations.
 - At the right level, components are the "things" that carry out the work.
+- See [[Key Elements of Architecture View]] for the focused treatment of components, connectors, and configuration as a triad.
 
 ### 2. Relationships
 *How the components interact and depend on each other.*
 - Data flows, call chains, dependencies, ownership, and communication paths.
 - Relationships determine coupling, cohesion, and the cost of change.
+- These relationships are **connectors** in the sense of [[Key Elements of Architecture View]] — first-class elements with their own type, protocol, and reliability semantics.
 
 ### 3. Principles and Constraints
 *The rules and guidelines that shape the design.*
@@ -89,7 +91,7 @@ graph LR
 
 ## 🔗 Deep Connections
 - **Parent Topic:** [[Software Architecture]], [[Modeling Software Architecture]]
-- **Related Concepts:** [[Model]], [[System]], [[System Modeling]], [[C4 Model]], [[Viewpoint]], [[Perspective]], [[Diagram]], [[Quality Attributes]], [[Non-Functional Requirements]], [[Behavior]], [[Behaviors]]
+- **Related Concepts:** [[Key Elements of Architecture View]] (the components / connectors / configuration triad that this note's elements are built from), [[Levels of Abstraction]] (System Architecture operates at the System level — the most zoomed-in of Enterprise/Solution/System), [[Model]], [[System]], [[System Modeling]], [[C4 Model]], [[Viewpoint]], [[Perspective]], [[Diagram]], [[Quality Attributes]], [[Non-Functional Requirements]], [[Behavior]], [[Behaviors]]
 - **Prerequisites:** [[System]], [[System Modeling]]
 
 ## ❓ Active Recall Questions
