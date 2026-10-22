@@ -8,6 +8,9 @@
 .obsidian/cache
 .obsidian/plugins/*/data.json
 
+# Obsidian drawio plugin (155 MB webapp bundle — re-installable from community store)
+.obsidian/plugins/drawio/
+
 # Node / cloned external repos (isolated under _reference/, not vault notes)
 node_modules/
 
@@ -21,6 +24,9 @@ books/*
 
 # Lockfiles / tooling artifacts
 skills-lock.json
+
+# ZCode agent session state (plans/config, per workspace)
+.zcode/
 
 # Binary build artifacts
 *.zip
