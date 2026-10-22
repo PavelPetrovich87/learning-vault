@@ -1,4 +1,5 @@
 ---
+status: stable
 title: NestJS Controller and Request Lifecycle
 date: 2026-06-23
 tags:
@@ -9,6 +10,7 @@ tags:
   - authentication
   - learning
 source: NestJS tutorial — request lifecycle and controllers
+updated: 2026-10-21
 ---
 
 ## Is the teacher's schema correct?

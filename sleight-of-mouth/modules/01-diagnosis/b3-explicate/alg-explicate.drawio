@@ -1,0 +1,73 @@
+<mxfile type="device">
+  <diagram id="alg-explicate" name="Алгоритм экспликации (протокол)">
+    <mxGraphModel dx="1000" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1060" pageHeight="1160" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="&lt;b&gt;Алгоритм экспликации (b3)&lt;/b&gt; — протокол диалога. Материал: гл. 5–6, 8; решения 2026-09-05." style="text;html=1;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="980" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="nIn" value="&lt;b&gt;Вход&lt;/b&gt; — карта после b2:&lt;br&gt;тип · фраза · A · B · мишени II–V («—» / «▲»);&lt;br&gt;мишень I — потенциальная (b2 её не маркирует)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="360" y="60" width="340" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="nIn" target="dType">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dType" value="тип = неполное?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="400" y="180" width="260" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="eFull" value="нет — полное" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;" edge="1" parent="1" source="dType" target="sI">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eInc" value="да — неполное" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dType" target="sExpand">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="sExpand" value="&lt;b&gt;Работа 2 · Раскрытие неполного&lt;/b&gt;&lt;br&gt;Полный проход осей (порядок с. 125):&lt;br&gt;«Как узнаёшь?» → «Что заставляет?» → «Каковы последствия?» → «Что значит?»&lt;br&gt;&lt;br&gt;Ответ — во фреймы:&lt;br&gt;«[фрагмент] &lt;b&gt;потому что&lt;/b&gt; [ответ]» → C-E;&lt;br&gt;«[фрагмент] &lt;b&gt;значит&lt;/b&gt; [ответ]» → CEq.&lt;br&gt;Приоритет C-E; первый прошедший — стоп" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="20" y="330" width="240" height="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="eJoin" value="связка найдена — тип, A, B в карту;&lt;br&gt;звенья — нормализацией (normalize);&lt;br&gt;дальше — общий путь" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sExpand" target="sI">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="sI" value="&lt;b&gt;Работа 1 · Подтверждение — вопрос мишени I первым&lt;/b&gt;&lt;br&gt;Ось по типу: C-E → «Что заставляет…?» (A — причина);&lt;br&gt;CEq → «Что значит…?» (A — термин); вторая ось — дополнительная.&lt;br&gt;Основание оказалось интерпретацией, не фактом&lt;br&gt;(«учительница так сказала») → &lt;b&gt;I ▲▲&lt;/b&gt; сразу —&lt;br&gt;источник уязвимости — сам ответ человека" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="320" y="330" width="420" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="sI" target="sConfirm">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="sConfirm" value="&lt;b&gt;Подтверждение по «▲» в порядке полей: II → III → IV → V&lt;/b&gt;&lt;br&gt;II ← «Каковы последствия…?» · IV ← «Как ты узнаёшь…?»&lt;br&gt;III — вопроса-причины нет, подтверждается попутно&lt;br&gt;(«распознавание чанков», канон §2);&lt;br&gt;V ← экспликация допущений (гл. 8, с. 174):&lt;br&gt;«Что должно быть правдой, чтобы это было верным?»&lt;br&gt;Ответы независимы — порядок влияет только на ход диалога" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="320" y="510" width="420" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="sConfirm" target="sOutcomes">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="sOutcomes" value="&lt;b&gt;Три исхода ответа&lt;/b&gt;&lt;br&gt;① содержательный (назван источник, причина, следствие) → &lt;b&gt;▲▲&lt;/b&gt;&lt;br&gt;② неспособность ответить («не знаю, просто чувствую») → &lt;b&gt;▲▲&lt;/b&gt;,&lt;br&gt;подтверждение сильнее (гл. 8, с. 167; гл. 5, с. 96)&lt;br&gt;③ отказ, смена темы → «ответ не получен»:&lt;br&gt;мишень остаётся «▲», для селектора не подтверждена" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="320" y="710" width="420" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="sOutcomes" target="nOut">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="nOut" value="&lt;b&gt;Выход — заполненная карта = выход модуля&lt;/b&gt;&lt;br&gt;02-intervention берёт подтверждённые мишени&lt;br&gt;(▲▲ и поднятая I)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="360" y="920" width="340" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="iv" value="Диалог ведёт &lt;b&gt;интервьюер&lt;/b&gt; — роль (interviewer.md):&lt;br&gt;модель-скилл · модель-приложение · человек по документам.&lt;br&gt;Вопросы — исследование, не допрос (с. 139)" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="780" y="60" width="240" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="tool" value="&lt;b&gt;Инструмент — четыре вопроса-причины&lt;/b&gt;&lt;br&gt;(с. 122–125, рис. 27)&lt;br&gt;&lt;br&gt;«Как ты узнаёшь…?» — удерживающая → IV&lt;br&gt;&lt;br&gt;«Что заставляет…?» — побуждающая → I (C-E)&lt;br&gt;&lt;br&gt;«Каковы последствия…?» — конечная → II&lt;br&gt;&lt;br&gt;«Что значит…?» — формальная → I (CEq)" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="780" y="240" width="240" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="eTool1" value="перебор осей" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#d6b656;fontSize=10;endArrow=none;exitX=1;exitY=0.2;entryX=0;entryY=0.75;" edge="1" parent="1" source="sExpand" target="tool">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eTool2" value="вопросы по мишеням" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#d6b656;fontSize=10;endArrow=none;" edge="1" parent="1" source="sConfirm" target="tool">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="shift" value="Побочный сдвиг — регистрировать честно, это результат, не ошибка: «Как узнаёшь…?» сам есть паттерн №10 — граница диагностики/интервенции проницаема (канон §5.6)" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="780" y="710" width="240" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="eShift" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#666666;endArrow=none;" edge="1" parent="1" source="shift" target="sOutcomes">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

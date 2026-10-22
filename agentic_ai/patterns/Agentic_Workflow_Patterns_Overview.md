@@ -1,8 +1,8 @@
 ---
-status: analyzing
+status: stable
 tags: [agentic-workflows, ai-patterns, system-design, llm, evergreen]
 created: 2026-06-21
-updated: 2026-06-21
+updated: 2026-10-21
 ---
 
 # Agentic Workflow Patterns: Overview

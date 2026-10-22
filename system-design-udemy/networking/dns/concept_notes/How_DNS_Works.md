@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 tags: [system-design, networking, dns]
 source: Udemy System Design Course
 created: 2026-06-27
 difficulty: intermediate
-updated: 2026-06-27
+updated: 2026-10-21
 ---
 
 # 🧠 Topic: How DNS Works

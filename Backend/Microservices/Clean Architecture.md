@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [clean-architecture, software-architecture, design-patterns, backend]
 source: Robert C. Martin - Clean Architecture
 created: 2026-06-26
-updated: 2026-07-03
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 tags: [system-design, networking, proxy, forward-proxy, reverse-proxy]
 source: Udemy System Design Course
 created: 2026-06-30
 difficulty: beginner
-updated: 2026-06-30
+updated: 2026-10-21
 ---
 
 # 🧠 Topic: Forward Proxy and Reverse Proxy

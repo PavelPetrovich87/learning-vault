@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 1 — платёжная группа" id="ex-6-payments">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 1 (простой): платёжные сущности магазина → группа entities/payment" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (магазин)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="В entities уже 11 слайсов. Платёжных — три (invoice, receipt, transaction), они разбросаны по алфавиту между order и user. Новичок не видит «зону платежей» одним взглядом." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон: ветка А (навигация)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. «The layer has grown to the point where it is hard to scan at a glance» + имена сами подсказывают тему (payment/*) → критерий есть" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Группа = папка для навигации: без сегментов, без index.ts, без общего кода; изоляция соседей прежняя — invoice не импортирует receipt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="195" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Импорты — по полному пути: «@/entities/payment/invoice» (не через группу!)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="310" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/entities/&#xa;├── payment/                  ← ГРУППА (нет index!)&#xa;│   ├── invoice/&#xa;│   │   ├── model/  ui/  index.ts&#xa;│   ├── receipt/&#xa;│   │   └── model/  ui/  index.ts&#xa;│   └── transaction/&#xa;│       └── model/  ui/  index.ts&#xa;├── order/&#xa;├── product/&#xa;└── user/" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// импорт по полному пути — группа не слайс&#xa;import { Invoice } from &quot;@/entities/payment/invoice&quot;;&#xa;import { Receipt } from &quot;@/entities/payment/receipt&quot;;&#xa;&#xa;// ❌ так нельзя: у группы нет публичного API&#xa;import { Invoice } from &quot;@/entities/payment&quot;;&#xa;&#xa;// ❌ и так нельзя: общий код внутри группы&#xa;// payment/_common/format-amount.ts → shared/lib или&#xa;// доменное правило → может, слить сущности (excessive-entities)" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="350" width="420" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Осторожно с группой в features&#xa;&#xa;«A group like features/cart/ tends to attract everything cart-related (DTOs, mappers, helpers) until it stops being a navigation aid and starts acting as the home for the entire cart domain» — группы для фич проверяй: внутри только фичи-слайсы, и навигация реально выигрывает." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=11.5;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="700" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: entities/payment — папка-навигация. Границы не изменились: слайсы те же, публичные API те же, правило импортов то же. Изменилась только сканируемость слоя." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="700" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s2" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

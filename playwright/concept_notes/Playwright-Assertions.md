@@ -1,9 +1,9 @@
 ---
-status: analyzing
+status: archived
 tags: [playwright, testing, e2e, assertions]
 source: https://playwright.dev/docs/test-assertions
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

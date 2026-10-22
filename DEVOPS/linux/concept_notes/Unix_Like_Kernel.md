@@ -1,8 +1,8 @@
 ---
-status: analyzing
+status: archived
 tags: [devops, linux, kernel, operating-systems, udemy]
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-10-21
 source: Udemy DevOps Course — Linux Fundamentals
 difficulty: beginner
 ---

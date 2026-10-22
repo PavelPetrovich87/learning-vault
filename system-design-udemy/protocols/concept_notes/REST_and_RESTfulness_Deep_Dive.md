@@ -1,8 +1,8 @@
 ---
-status: analyzing
+status: archived
 tags: [system-design, udemy, concept, rest, api, http]
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-10-21
 source: Udemy System Design Course
 ---
 

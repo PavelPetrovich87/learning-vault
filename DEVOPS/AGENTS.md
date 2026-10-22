@@ -41,6 +41,22 @@ Add new topic subfolders here as new course sections are introduced.
 - **Syntax:** Obsidian Spaced Repetition (`Question :: Answer #flashcards/devops` or multi-line format).
 - **Rule:** One card = one concept. Frame questions around problem-solving, tools, commands, trade-offs, and gotchas.
 
+### Flashcards in the AI Era — Design Principle
+
+Before generating flashcards, the agent MUST first reason explicitly about **which competence the card builds**, in the context of an AI-enhanced DevOps workflow where recall is cheap and on-demand. Knowledge separates into three layers with very different ROI:
+
+1. **Recall (flags, syntax, exact options).** AI obsoletes this. Do NOT create flashcards for flag tables, option lists, or syntax memorization. These are lookups.
+2. **Vocabulary (knowing a tool exists and what problem family it solves).** Necessary but insufficient. A small number of cards per topic is enough — the goal is recognition, not exhaustive coverage.
+3. **Mental models & composition (data-flow reasoning, tool selection, ordering, debugging, gotchas).** This is the layer that compounds and that AI cannot install in the learner's head. **Prioritize this layer.**
+
+When asked to create flashcards, the agent must:
+- **First produce a short analysis** of the topic: which competences matter, how AI shifts their value, and which layer each candidate card targets.
+- **Favor cards that build the model** — "why does `uniq` require sorted input?", "what's wrong with `command 2>&1 > file`?", "predict the output of this pipeline" — over cards that test recall ("what flag sorts numerically?").
+- **Include composition and debug-the-AI cards** where relevant: predict-the-output drills, planted-bug detection, pipeline-ordering reasoning.
+- **Store lookup material (flag tables, syntax references) in the concept note**, not in flashcards. Flashcards are the wrong home for reference data.
+
+A good heuristic: if a card's answer can be rephrased as "look it up," it should not exist. If it builds judgment that survives the existence of AI, it should.
+
 ## Naming Conventions
 
 - Research notes: `{SectionNumber}_{Topic_Name}.md` or `{CourseName}_{Topic_Name}.md`
@@ -76,4 +92,4 @@ Update `updated:` on every edit.
 
 ---
 
-*Last updated: 2026-07-01*
+*Last updated: 2026-07-11*

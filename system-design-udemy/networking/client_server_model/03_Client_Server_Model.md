@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [system-design, udemy, networking, client-server-model, research]
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-10-21
 ---
 
 # 03_Client_Server_Model

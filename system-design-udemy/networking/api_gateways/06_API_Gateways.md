@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [system-design, udemy, networking, api-gateway, microservices, security, research]
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-10-21
 ---
 
 # 06_API_Gateways

@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 3 — корзина" id="ex-3-cart">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="940" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 3 (сложный): корзина — когда сущность, когда нет (+ анти-кейс user/auth)" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (магазин)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Этап А: на странице товара есть кнопка «в корзину» с оптимистичным обновлением счётчика.&#xa;&#xa;Этап Б: появились чекаут и сводка заказа — обе обязаны показывать согласованное содержимое корзины.&#xa;&#xa;Бонус-вопрос: заводить ли entities/user ради токенов сессии?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Этап А — Snapshot 3: «The state here exists only to run the add-to-cart interaction and carries no cart-domain responsibility anyone else could reuse, so Step 4 keeps it inside the feature» → model живёт В ФИЧЕ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Этап Б — чекаут и сводка обязаны соглашаться → extraction rule выполняется: ① два потребителя ② меняется по правилам корзины (наличие, резерв) ③ сфокусированная ответственность → entities/cart" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="215" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Анти-кейс: «Do not create a user entity just for auth data» (§6) → токены и login DTO в shared/auth; user-сущность зарабатывается вне логина (аватары в комментариях, имена в отзывах)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="ЭТАП А — корзины-сущности НЕТ:&#xa;src/features/add-to-cart/&#xa;├── ui/AddToCartButton.tsx&#xa;├── api/add-to-cart.ts&#xa;├── model/add-to-cart.ts   ← pending и&#xa;│                            оптимистичное состояние&#xa;└── index.ts&#xa;&#xa;ЭТАП Б — сущность появилась:&#xa;src/entities/cart/&#xa;├── model/cart.ts          ← содержимое,&#xa;│                            резервы, итоги&#xa;├── ui/CartBadge.tsx&#xa;└── index.ts" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// ЭТАП Б: entities/cart/model/cart.ts&#xa;export type CartLine = {&#xa;  productId: string; qty: number; reservedUntil?: number;&#xa;};&#xa;&#xa;export const cartTotal = (lines: CartLine[]): number =&gt;&#xa;  lines.reduce((sum, l) =&gt; sum + l.qty * l.unitPrice, 0);&#xa;&#xa;// чекаут и сводка заказа согласованы через одну модель:&#xa;// pages/checkout/…  и  features/order-summary/…&#xa;// обе импортируют «@/entities/cart»" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="410" width="420" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="anti" value="Анти-кейс рядом: entities/user ради токенов&#xa;&#xa;❌ «wrap a login response in a user entity tends to pull the entity into @x chains»&#xa;✅ shared/auth: токены, сессия, login-утилиты&#xa;✅ entities/user — когда пользовательские обязанности устойчивы ВНЕ логина: «avatars in comments, names in posts»&#xa;&#xa;«An entities layer that already exists is not itself a reason.» — существование слоя entities не повод тащить туда auth." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11.5;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="700" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: одна и та же «корзина» проходит уровень дважды. Пока состояние обслуживает только действие — оно в фиче. Когда несколько потребителей обязаны соглашаться о содержимом — появляется entities/cart. Существительное — необходимый признак, extraction rule — достаточный." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="700" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s2" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

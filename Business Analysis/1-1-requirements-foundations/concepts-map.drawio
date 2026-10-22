@@ -1,0 +1,185 @@
+<mxfile host="app.diagrams.net" modified="2026-08-03T00:00:00.000Z" agent="ba-dev-trainer" version="24.0.0" type="device">
+  <diagram name="Глава 1.1 — Карта концепций" id="chapter-1-1-map">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ============ ЗАГОЛОВОК ============ -->
+        <mxCell id="title" value="&lt;b&gt;Глава 1.1 — Карта концепций: что связано с чем&lt;/b&gt;" style="text;html=1;align=center;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="800" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Три оси: &lt;b&gt;УРОВНИ&lt;/b&gt; (зачем→что, вертикаль) · &lt;b&gt;ТИПЫ ВОКРУГ&lt;/b&gt; (пронизывают все уровни) · &lt;b&gt;ПРОЦЕСС&lt;/b&gt; (как создаём и удерживаем)" style="text;html=1;align=center;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="1000" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ============ ОСЬ 1: ТРИ УРОВНЯ (вертикаль, центр) ============ -->
+        <mxCell id="lvl1_box" value="&lt;b&gt;УРОВЕНЬ 1 — БИЗНЕС-ТРЕБОВАНИЕ&lt;/b&gt; (business requirement)&#xa;Отвечает: &lt;b&gt;ПОЧЕМУ&lt;/b&gt; (зачем организации)&#xa;Контейнер: Документ концепции и границ (vision &amp; scope)&#xa;Пример: «Снизить затраты у стойки на 25%»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="90" width="360" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lvl2_box" value="&lt;b&gt;УРОВЕНЬ 2 — ПОЛЬЗОВАТЕЛЬСКОЕ ТРЕБОВАНИЕ&lt;/b&gt; (user requirement)&#xa;Отвечает: &lt;b&gt;ЗАЧЕМ ПОЛЬЗОВАТЕЛЮ&lt;/b&gt; (что он должен мочь делать)&#xa;Контейнер: Документ пользовательских требований&#xa;Форма: use case / user story&#xa;Пример: «Как пассажир, я хочу зарегистрироваться на рейс…»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="240" width="360" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lvl3_box" value="&lt;b&gt;УРОВЕНЬ 3 — ФУНКЦИОНАЛЬНОЕ ТРЕБОВАНИЕ&lt;/b&gt; (functional requirement, ФТ)&#xa;Отвечает: &lt;b&gt;ЧТО ДЕЛАЕТ СИСТЕМА&lt;/b&gt; (поведение)&#xa;Контейнер: SRS (спецификация требований к ПО)&#xa;Форма: «система должна…»&#xa;Пример: «Система должна распечатать посадочный талон»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="390" width="360" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="feature_box" value="&lt;b&gt;FEATURE (функция)&lt;/b&gt;&#xa;гранулярность = &lt;b&gt;группа связанных ФТ&lt;/b&gt;&#xa;«Избранное», «Тёмная тема»&#xa;не «характеристика»!" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="540" y="520" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- стрелки уровней -->
+        <mxCell id="e_lvl1_lvl2" value="порождает" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;strokeWidth=2;fontSize=10;fontStyle=2;" edge="1" parent="1" source="lvl1_box" target="lvl2_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_lvl2_lvl3" value="одно → много" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;strokeWidth=2;fontSize=10;fontStyle=2;" edge="1" parent="1" source="lvl2_box" target="lvl3_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_lvl3_feature" value="группируется в" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#d79b00;fontSize=9;" edge="1" parent="1" source="lvl3_box" target="feature_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ============ ОСЬ 2: ТИПЫ ВОКРУГ (справа, пронизывают уровни) ============ -->
+        <mxCell id="around_title" value="&lt;b&gt;ТИПЫ ВОКРУГ УРОВНЕЙ&lt;/b&gt;&#xa;(пронизывают ВСЕ три уровня,&#xa;не принадлежат одному)" style="text;html=1;align=center;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="110" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="qa_box" value="&lt;b&gt;Атрибуты качества&lt;/b&gt; (quality attributes / НФТ)&#xa;«насколько хорошо»: производительность,&#xa;доступность, безопасность, переносимость&#xa;&lt;i&gt;Пример: «Отвечает за 200 мс»&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="190" width="240" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="iface_box" value="&lt;b&gt;Внешние интерфейсы&lt;/b&gt; (external interfaces)&#xa;«с чем взаимодействует»: другие системы,&#xa;устройства, UI (пользователь)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="290" width="240" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="constr_box" value="&lt;b&gt;Ограничения&lt;/b&gt; (constraints)&#xa;«в каких рамках»: технология, бюджет,&#xa;нормативы (GDPR, PostgreSQL 15)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="380" width="240" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="brule_box" value="&lt;b&gt;Бизнес-правила&lt;/b&gt; (business rules)&#xa;«политики ВНЕ системы» (можно вручную)&#xa;&lt;b&gt;≠ ФТ!&lt;/b&gt; Может порождать:&#xa;• ФТ (часто) · атрибут качества (часто)&#xa;• группу ФТ = feature (иногда)&#xa;&lt;i&gt;Пример: «Лимит 4 часа/день»&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="460" width="240" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- рельс «все 3 уровня»: типы пронизывают уровни, не привязаны к одному -->
+        <mxCell id="rail_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="945" y="95" width="14" height="385" as="geometry"/>
+        </mxCell>
+        <mxCell id="rail_label_top" value="&lt;b&gt;все 3&lt;/b&gt;&#xa;&lt;b&gt;уровня&lt;/b&gt;" style="text;html=1;align=center;fontSize=8;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="928" y="68" width="48" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="rail_label_bot" value="(пронизывает)" style="text;html=1;align=center;fontSize=7;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="915" y="484" width="74" height="14" as="geometry"/>
+        </mxCell>
+
+        <!-- каждый тип -> рельс (применимо ко всем уровням, а не к одному) -->
+        <mxCell id="e_qa_rail" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#9673a6;endArrow=none;" edge="1" parent="1" source="qa_box" target="rail_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_iface_rail" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#9673a6;endArrow=none;" edge="1" parent="1" source="iface_box" target="rail_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_constr_rail" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#9673a6;endArrow=none;" edge="1" parent="1" source="constr_box" target="rail_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- бизнес-правило: ДРУГОЕ отношение — порождает feature (сплошная, в обход рельса) -->
+        <mxCell id="e_brule_feature" value="может породить (через группу ФТ)" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#b85450;strokeWidth=2;fontSize=9;fontStyle=2;" edge="1" parent="1" source="brule_box" target="feature_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ============ ОСЬ 3: ПРОЦЕСС (слева) ============ -->
+        <mxCell id="proc_title" value="&lt;b&gt;ОСЬ ПРОЦЕССА&lt;/b&gt;&#xa;(как создаём и удерживаем)" style="text;html=1;align=center;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="100" y="110" width="200" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="dev_box" value="&lt;b&gt;РАЗРАБОТКА ТРЕБОВАНИЙ&lt;/b&gt;&#xa;(requirements development)&#xa;«как создаём знание»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="180" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="elicit_box" value="&lt;b&gt;1. Выявление&lt;/b&gt; (elicitation)&#xa;интервью, наблюдение, классы&#xa;пользователей, бизнес-цели" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="100" y="260" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="analysis_box" value="&lt;b&gt;2. Анализ&lt;/b&gt; (analysis)&#xa;отделить задачи от ФТ/НФТ/правил,&#xa;декомпозиция, выявление пробелов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="100" y="340" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="spec_box" value="&lt;b&gt;3. Документирование&lt;/b&gt; (specification)&#xa;запись требования на языке аудитории&#xa;user story, ФТ-«должна»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="100" y="420" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="valid_box" value="&lt;b&gt;4. Утверждение&lt;/b&gt; (validation)&#xa;проверка + &lt;b&gt;приёмочные тесты&lt;/b&gt;&#xa;(acceptance tests/criteria)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="100" y="500" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_dev_elicit" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;" edge="1" parent="1" source="dev_box" target="elicit_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_elicit_ana" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;" edge="1" parent="1" source="elicit_box" target="analysis_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_ana_spec" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;" edge="1" parent="1" source="analysis_box" target="spec_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_spec_valid" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;" edge="1" parent="1" source="spec_box" target="valid_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- MANAGEMENT -->
+        <mxCell id="mgmt_box" value="&lt;b&gt;УПРАВЛЕНИЕ ТРЕБОВАНИЯМИ&lt;/b&gt;&#xa;(requirements management)&#xa;«как удерживаем знание корректным»&#xa;&lt;b&gt;Не запрещает изменения,&lt;/b&gt; а предугадывает их" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="600" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="baseline_box" value="• &lt;b&gt;Baseline&lt;/b&gt; (база) — снимок&#xa;• Impact analysis (оценка влияния)&#xa;• &lt;b&gt;Traceability&lt;/b&gt; (трассировка)&#xa;• Status tracking (состояния)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="100" y="700" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_mgmt_baseline" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="mgmt_box" target="baseline_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ============ ПРОДУКТ vs ПРОЕКТ (справа внизу) ============ -->
+        <mxCell id="prod_proj_title" value="&lt;b&gt;ПРОДУКТ vs ПРОЕКТ&lt;/b&gt;&#xa;(куда записать)" style="text;html=1;align=center;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="600" width="240" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="prod_box" value="&lt;b&gt;ПРОДУКТ&lt;/b&gt; (product)&#xa;останется после релиза:&#xa;код, фичи, атрибуты качества&#xa;→ в &lt;b&gt;SRS&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="650" width="240" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="proj_box" value="&lt;b&gt;ПРОЕКТ&lt;/b&gt; (project)&#xa;нужно для запуска, разово:&#xa;миграция, обучение, документация&#xa;→ в &lt;b&gt;план проекта&lt;/b&gt; (в т.ч. &lt;i&gt;transition req.&lt;/i&gt;)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="740" width="240" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_lvl3_prod" value="живёт в" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#6c8ebf;fontSize=9;fontStyle=2;" edge="1" parent="1" source="lvl3_box" target="prod_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ============ КЛЮЧЕВАЯ ЦИФРА (центр-низ) ============ -->
+        <mxCell id="numbers_box" value="&lt;b&gt;ЭКОНОМИКА (почему это важно)&lt;/b&gt;&#xa;• 40–50% дефектов продукта заложены на этапе требований&#xa;• Переделка: 30–50% бюджета · 70–85% её стоимости = ошибки требований&#xa;• Исправление дефекта требования: &lt;b&gt;$1&lt;/b&gt; (этап работы) → &lt;b&gt;$2–3&lt;/b&gt; (проектирование) → &lt;b&gt;$100+&lt;/b&gt; (прод)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="620" width="620" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- ============ ЛЕГЕНДА ============ -->
+        <mxCell id="legend_title" value="&lt;b&gt;Как читать&lt;/b&gt;" style="text;html=1;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="730" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend1" value="сплошная стрелка = «порождает / ведёт к»" style="text;html=1;align=left;fontSize=9;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="380" y="750" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend2" value="пунктир = «связано с / пронизывает»" style="text;html=1;align=left;fontSize=9;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="380" y="770" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend3" value="&lt;b&gt;Центральная вертикаль&lt;/b&gt; = ось «почему→зачем→что делает система»" style="text;html=1;align=left;fontSize=9;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="380" y="790" width="400" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend4" value="Слева = процесс. Справа = типы вокруг + продукт/проект" style="text;html=1;align=left;fontSize=9;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="380" y="810" width="400" height="20" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

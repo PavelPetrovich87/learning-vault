@@ -1,8 +1,8 @@
 ---
-status: analyzing
+status: stable
 tags: [agentic-ai, openai-sdk, sandbox, security, code-execution, isolation, agents]
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-10-21
 difficulty: advanced
 source: https://platform.openai.com/docs/assistants/tools/code-interpreter
 ---

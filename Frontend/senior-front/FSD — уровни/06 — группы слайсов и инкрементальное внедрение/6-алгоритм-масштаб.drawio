@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Алгоритм — масштаб" id="alg-6-scale">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="940" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Уровень 6: масштаб — три независимых вопроса (группы · среды · миграция)" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="350" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c1hdr" value="А. Слайсов стало много" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="66" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c1q1" value="Плоский слой трудно&#xa;просканировать глазами?&#xa;Есть очевидный критерий&#xa;группировки?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="340" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c1no" value="Нет → плоская структура&#xa;«Names alone are enough&#xa;for quick navigation»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11.5" vertex="1" parent="1">
+          <mxGeometry x="450" y="120" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c1yes" value="Группа-папка (навигация)&#xa;⚠ НЕ слайс: без сегментов, без index.ts,&#xa;без общего кода; изоляция соседей прежняя&#xa;⚠ features — «use with caution»&#xa;(features/cart тянет весь домен)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="270" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c1anti" value="Анти-паттерны группы:&#xa;❌ index.ts на папке группы&#xa;❌ utils.ts / constants.ts внутри&#xa;❌ _common/ между соседями" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c2hdr" value="Б. Один код — разные среды" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="480" y="66" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c2q1" value="Server-only экспорты&#xa;ломают клиентский граф&#xa;модулей?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5" vertex="1" parent="1">
+          <mxGeometry x="500" y="230" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c2no" value="Нет → один index.ts&#xa;«ad-hoc variations&#xa;are not recommended»&#xa;(SKILL.md §4-2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11.5" vertex="1" parent="1">
+          <mxGeometry x="860" y="250" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c2yes" value="index.server.ts (и при необходимости index.client.ts):&#xa;server-only отдельно; «Split only when this boundary&#xa;is required» — framework-integration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="460" y="390" width="400" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c3hdr" value="В. Легаси без FSD" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="900" y="66" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c3q1" value="Команда согласна? Есть&#xa;сигналы: новичкам тяжело;&#xa;правки ломают чужое;&#xa;контекст не влезает?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5" vertex="1" parent="1">
+          <mxGeometry x="920" y="100" width="340" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="c3no" value="Нет → не мигрировать:&#xa;«do you really need it?» · «Avoid switching&#xa;to FSD against the will of teammates»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="880" y="330" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c3steps" value="Миграция pages-first (from-custom, по шагам):&#xa;① делить код по страницам (роуты = тонкие реэкспорты)&#xa;② остальное: не импортирует pages → shared; импортирует → app&#xa;③ кросс-импорты страниц: копипаст (допустим!) или сегмент shared&#xa;④ распаковать shared: бизнес-код на свои слои&#xa;⑤ сегменты по техническому назначению&#xa;≡ стратегия главы §8.3: App/Shared → Pages широко → чинить нарушения" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11.5;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="760" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c3anti" value="Совет главы §8.3:&#xa;новые большие сущности во время&#xa;рефакторинга не заводить;&#xa;или рефакторить по частям" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=11.5;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="840" y="540" width="420" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="golden" value="Сквозное: всё на этом уровне — НАВИГАЦИЯ и ИСКЛЮЧЕНИЯ, не новые границы. Группа не создаёт границу; index.server — не норма, а рантайм-необходимость; миграция — не событие, а процесс." style="text;html=1;fontSize=11.5;fontColor=#7c2d12;align=center;whiteSpace=wrap;fillColor=#fff7ed;strokeColor=#fdba74;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="760" width="1220" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" value="нет" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="c1q1" target="c1no">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" value="да" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="c1q1" target="c1yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#b85450;dashed=1" edge="1" parent="1" source="c1yes" target="c1anti">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t4" value="нет" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="c2q1" target="c2no">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t5" value="да" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="c2q1" target="c2yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t6" value="нет" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#b85450;fontSize=11" edge="1" parent="1" source="c3q1" target="c3no">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t7" value="да → мигрировать" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="c3q1" target="c3steps">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

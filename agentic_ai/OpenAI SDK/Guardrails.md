@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [agentic-ai, openai, agents-sdk, guardrails, evergreen]
 source: OpenAI Agents SDK Official Documentation
 created: 2026-06-25
-updated: 2026-06-25
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

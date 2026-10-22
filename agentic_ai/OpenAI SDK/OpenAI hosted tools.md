@@ -1,9 +1,9 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [agentic-ai, openai, tools, openai-agents-sdk]
 created: 2026-07-02
-updated: 2026-07-03
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

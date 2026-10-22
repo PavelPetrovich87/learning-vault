@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 tags: [playwright, testing, e2e, locators, content]
 source:
   - https://playwright.dev/docs/locators#get-text-content
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-10-21
 difficulty: beginner
 ---
 
@@ -141,7 +141,7 @@ await expect(page.locator('a')).toHaveAttribute('href', '/dashboard');
 ## 🔗 Deep Connections
 
 - **Parent Topic:** [[Playwright-Test-Object-and-Fixtures]]
-- **Related Concepts:** [[Playwright-Assertions]], [[CSS Selectors]], [[XPath Selectors]]
+- **Related Concepts:** [[Playwright inputValue vs textContent]] (the focused deep-dive on the most bug-prone comparison), [[Playwright-Assertions]], [[CSS Selectors]], [[XPath Selectors]]
 - **Prerequisites:** Locators, async/await, basic DOM concepts.
 
 ## ❓ Active Recall Questions
@@ -162,6 +162,7 @@ await expect(page.locator('a')).toHaveAttribute('href', '/dashboard');
 
 ## 📝 Related Notes
 
+- [[Playwright inputValue vs textContent]]
 - [[Playwright-Assertions]]
 - [[Playwright-Test-Object-and-Fixtures]]
 - [[CSS Selectors]]

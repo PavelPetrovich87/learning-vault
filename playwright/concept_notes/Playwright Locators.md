@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 tags: [playwright, testing, e2e, locators]
 source:
   - https://playwright.dev/docs/locators
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-10-21
 difficulty: beginner
 ---
 

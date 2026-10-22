@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [hexagonal-architecture, domain-layer, ports-and-adapters, interfaces, backend]
 source: Hexagonal Architecture / Ports and Adapters
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" agent="zcode" version="24.7.7">
+  <diagram id="sub2-load" name="П2 Нагрузка на роли">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1180" pageHeight="640" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="lane1" value="ОТКУДА" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="280" height="540" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1" value="Поле 4: DAU · действий/день ·&lt;br&gt;пик ×3 + нагрузка по действиям&lt;br&gt;(действие · доля · объект)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="50" width="240" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="Состав (модель, шаг 1) —&lt;br&gt;связи для проводки" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="180" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="Сценарии (поле 6):&lt;br&gt;день · пик · рост" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="280" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="s4" value="Механика взаимодействия (модель):&lt;br&gt;поллинг / push ·&lt;br&gt;обращений на действие" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="380" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane2" value="КАК" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="340" height="540" as="geometry"/>
+        </mxCell>
+        <mxCell id="op1" value="Проводка действий: каждое действие&lt;br&gt;от входа (роль без входящих связей)&lt;br&gt;по цепочке ролей → путь" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="60" width="280" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="op2" value="λ = DAU × дейст/день ÷ 86 400 × пик&lt;br&gt;× доля действия × запр/действие&lt;br&gt;(по каждому сценарию)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="220" width="280" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane3" value="КУДА" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="40" width="320" height="540" as="geometry"/>
+        </mxCell>
+        <mxCell id="d1" value="нагрузка_на_роли&lt;br&gt;(роль · сценарий · λ запр/с)&lt;br&gt;— производные модели" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane3">
+          <mxGeometry x="30" y="60" width="260" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2" value="пути — в память прогона:&lt;br&gt;читают П3 (Σ фаз) и П5 (W);&lt;br&gt;в модель не пишутся" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="lane3">
+          <mxGeometry x="30" y="220" width="260" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s1" target="op1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s2" target="op1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s4" target="op1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op1" target="op2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s1" target="op2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s3" target="op2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op2" target="d1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="пути" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="op1" target="d2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

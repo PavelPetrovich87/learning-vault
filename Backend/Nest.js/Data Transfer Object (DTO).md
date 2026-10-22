@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [nest-js, dto, validation, class-validator, mapped-types]
 source: https://docs.nestjs.com/techniques/validation
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

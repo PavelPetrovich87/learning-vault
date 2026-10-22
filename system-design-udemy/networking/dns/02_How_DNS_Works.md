@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [system-design, udemy, networking, dns, research]
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-10-21
 ---
 
 # 02_How_DNS_Works

@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 2 — юзкейсы и домен" id="ex-4-usecase-domain">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 2 (средний): корзина магазина — юз-кейсы (features) vs домен (entities) vs транспорт (shared)" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (магазин)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Задача «сделать корзину» распадается на разнородный код:&#xa;&#xa;• действия: добавить, убрать, очистить;&#xa;• данные и правила: содержимое, резервы, итог;&#xa;• транспорт: cart-DTO, CRUD эндпоинты.&#xa;&#xa;Куда что?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма (по типу кода)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. «Добавить/убрать» — глаголы, полные действия, несколько потребителей → Шаг 3 → features/add-to-cart, features/remove-from-cart" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Содержимое/резервы/итог — существительное с правилами, чекаут и сводка обязаны соглашаться → Шаг 4 → entities/cart" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="195" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. cart-DTO и CRUD-обёртки — «CRUD is infrastructure, not entities» → shared/api. Справочник slice-groups (глава §4.3): «add-to-cart/remove-from-cart — юз-кейсы, а cart-DTO и мапперы — домен»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/&#xa;├── features/&#xa;│   ├── add-to-cart/&#xa;│   │   ├── ui/AddToCartButton.tsx&#xa;│   │   ├── api/add-to-cart.ts     ← юз-кейс&#xa;│   │   └── model/…&#xa;│   └── remove-from-cart/&#xa;│       └── …&#xa;├── entities/cart/&#xa;│   ├── model/cart.ts             ← домен:&#xa;│   │   │                            правила, итоги&#xa;│   └── index.ts&#xa;└── shared/api/endpoints/cart.ts  ← CartDto, CRUD" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// shared/api/endpoints/cart.ts — транспорт&#xa;export type CartDto = { lines: { productId: string; qty: number }[] };&#xa;export const getCart = () =&gt; apiClient.get&lt;CartDto&gt;(&quot;/cart&quot;);&#xa;&#xa;// entities/cart/model/cart.ts — домен&#xa;import { type CartDto } from &quot;@/shared/api/endpoints/cart&quot;;&#xa;export type CartLine = CartDto[&quot;lines&quot;][number];&#xa;export const cartTotal = (lines: CartLine[]): number =&gt; …;&#xa;&#xa;// features/add-to-cart/api/add-to-cart.ts — юз-кейс&#xa;export const addToCart = (productId: string) =&gt;&#xa;  apiClient.post(&quot;/cart/lines&quot;, { productId, qty: 1 });&#xa;// именно юз-кейс, не CRUD: ездит с фичей (Snapshot 3)" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="400" width="420" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Ловушка №1: «сделаем одну фичу cart со всем»&#xa;«Do not create god slices» (§6): широкая ответственность режется на сфокусированные.&#xa;&#xa;Ловушка №2: «CRUD в entities, раз про корзину»&#xa;«Putting CRUD wrappers in entities … clutters the layer» — чистый доступ к ресурсу живёт по правилу запросов: с потребителем, а при нескольких — в shared/api." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="700" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: одна «корзина» = три разных дома по природе кода: действия → features, домен → entities, транспорт → shared/api. Глава и скилл формулируют это одинаково (slice-groups ⇔ «CRUD is infrastructure»)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="700" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

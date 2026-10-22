@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 1 — кнопка магазина" id="ex-1-button">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 1 (простой): кнопка магазина → shared/ui" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Магазин. Кнопка нужна на странице товара, в корзине и в чекауте.&#xa;&#xa;Внутри: стили, вариант (primary / ghost), состояние disabled. Никаких правил продукта о его данных." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма (Шаги 1–2, правило 4-2)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Шаг 1 «Where is this code used?»: три страницы — держать в слайсе одной страницы нельзя" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Шаг 2: переиспользуемая инфраструктура без бизнес-логики — «UI components → shared/ui/» (SKILL.md §2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="190" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Правило 4-2: наружу — только через index; у shared нет слайсов, публичный API — на сегмент (shared/ui/index.ts)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value=" " style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="treeTxt" value="src/&#xa;├── app/&#xa;├── pages/&#xa;│   ├── product/&#xa;│   ├── cart/          ← импортируют&#xa;│   └── checkout/         «@/shared/ui»&#xa;└── shared/&#xa;    └── ui/&#xa;        ├── Button/&#xa;        │   ├── Button.tsx&#xa;        │   └── index.ts&#xa;        └── index.ts" style="text;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;whiteSpace=wrap" vertex="1" parent="1">
+          <mxGeometry x="830" y="98" width="400" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// shared/ui/Button/Button.tsx&#xa;import { type ButtonHTMLAttributes } from &quot;react&quot;;&#xa;import { cn } from &quot;../lib/cn&quot;;&#xa;&#xa;type Props = ButtonHTMLAttributes&lt;HTMLButtonElement&gt; &amp; {&#xa;  variant?: &quot;primary&quot; | &quot;ghost&quot;;&#xa;};&#xa;&#xa;export const Button = ({ variant = &quot;primary&quot;, ...rest }: Props) =&gt; (&#xa;  &lt;button className={cn(&quot;btn&quot;, `btn--${variant}`)} {...rest} /&gt;&#xa;);" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="300" width="420" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="code2" value="// shared/ui/Button/index.ts — граница (правило 4-2)&#xa;export { Button } from &quot;./Button&quot;;&#xa;&#xa;// pages/cart/ui/CartPage.tsx — потребитель (импорт строго вниз)&#xa;import { Button } from &quot;@/shared/ui&quot;;" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="550" width="420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: shared/ui — инфраструктура без бизнес-контекста (глава 1.2 §3.2: «компоненты этого слоя не должны содержать бизнес-логику»). Три потребителя импортируют только через публичный API сегмента." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="710" width="1200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

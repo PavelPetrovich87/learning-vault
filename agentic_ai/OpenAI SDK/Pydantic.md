@@ -1,8 +1,8 @@
 ---
-status: analyzing
+status: stable
 tags: [agentic-ai, openai-sdk, pydantic, validation, structured-output]
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-10-21
 difficulty: intermediate
 source: https://docs.pydantic.dev/latest/
 ---

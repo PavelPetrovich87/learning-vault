@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="zcode" version="24.7.7">
+  <diagram id="sub3-latency" name="П3 Бюджет latency">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1180" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="lane1" value="ОТКУДА" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="280" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1" value="SLO latency (поле 3):&lt;br&gt;«поиск p95 ≤ 500 мс»&lt;br&gt;+ сценарии обещания" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="50" width="240" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="Справочник: доставка ~100 мс (RTT) ·&lt;br&gt;порядки цен фаз" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="190" width="240" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="Пути (из П2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="310" width="240" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane2" value="КАК" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="340" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="op1" value="Вычет доставки:&lt;br&gt;SLO − доставка" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="50" width="280" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="op2" value="Σ фаз по пути&lt;br&gt;(порядки справочника)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="160" width="280" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="op3" value="Доставка + Σ фаз ≤ SLO?&lt;br&gt;в каждом сценарии обещания" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="270" width="280" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="op4" value="Дележ остатка по ролям&lt;br&gt;+ сборка обратно:&lt;br&gt;100 + 10 + 390 = 500 ✓" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="440" width="280" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane3" value="КУДА" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="40" width="320" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="d1" value="бюджеты_ролей (latency)&lt;br&gt;выведено_из: SLO · сценарий" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane3">
+          <mxGeometry x="30" y="50" width="260" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2" value="доставка — вычет&lt;br&gt;(не бюджет роли)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane3">
+          <mxGeometry x="30" y="180" width="260" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="d3" value="реестр_вопросов → наружу&lt;br&gt;(нет порядка для фазы)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" vertex="1" parent="lane3">
+          <mxGeometry x="30" y="290" width="260" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="d4" value="возврат на шаг 1 / торг&lt;br&gt;(не влезает даже из минимумов)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" vertex="1" parent="lane3">
+          <mxGeometry x="30" y="410" width="260" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s2" target="op1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op1" target="d2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op1" target="op2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s2" target="op2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s3" target="op2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="нет порядка" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="op2" target="d3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op2" target="op3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s1" target="op3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="влезает" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op3" target="op4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="не влезает" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="op3" target="d4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op4" target="d1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

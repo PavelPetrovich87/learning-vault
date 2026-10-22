@@ -1,0 +1,369 @@
+{
+  "meta": {
+    "title": "Фокусы языка (Sleight of Mouth) — база знаний",
+    "source_book": "Дилтс Р. «Фокусы языка. Изменение убеждений с помощью НЛП», СПб.: Питер, 2010 (Sleight of Mouth, Meta Publications, 1999)",
+    "language": "ru",
+    "format": "markdown+yaml frontmatter; см. README.md",
+    "built": "2026-08-27"
+  },
+  "units": [
+    {
+      "file": "concepts/ch01-language-experience.md",
+      "id": "ch01-language-experience",
+      "type": "concept",
+      "title": "Язык и опыт",
+      "chapters": [
+        1
+      ],
+      "pages": "13-27"
+    },
+    {
+      "file": "concepts/ch02-frames-reframing.md",
+      "id": "ch02-frames-reframing",
+      "type": "concept",
+      "title": "Фреймы и рефрейминг",
+      "chapters": [
+        2
+      ],
+      "pages": "27-54"
+    },
+    {
+      "file": "concepts/ch03-chunking.md",
+      "id": "ch03-chunking",
+      "type": "concept",
+      "title": "Группирование",
+      "chapters": [
+        3
+      ],
+      "pages": "54-65"
+    },
+    {
+      "file": "concepts/ch04-values-criteria.md",
+      "id": "ch04-values-criteria",
+      "type": "concept",
+      "title": "Ценности и критерии",
+      "chapters": [
+        4
+      ],
+      "pages": "65-90"
+    },
+    {
+      "file": "concepts/appendix-role-model.md",
+      "id": "concepts-role-model",
+      "type": "concept",
+      "title": "Приложение: модель ROLE",
+      "chapters": [
+        "appendix"
+      ],
+      "pages": "251-256"
+    },
+    {
+      "file": "concepts/conclusion.md",
+      "id": "conclusion",
+      "type": "overview",
+      "title": "Заключение",
+      "pages": "248-251"
+    },
+    {
+      "file": "beliefs/ch05-beliefs-expectations.md",
+      "id": "ch05-beliefs-expectations",
+      "type": "concept",
+      "title": "Убеждения и ожидания",
+      "chapters": [
+        5
+      ],
+      "pages": "90-113"
+    },
+    {
+      "file": "beliefs/belief-structure.md",
+      "id": "beliefs-belief-structure",
+      "type": "concept",
+      "title": "Базовая структура убеждений",
+      "chapters": [
+        6
+      ],
+      "pages": "113-140"
+    },
+    {
+      "file": "beliefs/thought-viruses.md",
+      "id": "beliefs-thought-viruses",
+      "type": "concept",
+      "title": "Мысли-вирусы и метаструктура",
+      "chapters": [
+        8
+      ],
+      "pages": "163-189"
+    },
+    {
+      "file": "beliefs/logical-levels.md",
+      "id": "beliefs-logical-levels",
+      "type": "concept",
+      "title": "Логические типы и нейро-логические уровни",
+      "chapters": [
+        8
+      ],
+      "pages": "183-197"
+    },
+    {
+      "file": "processes/belief-change-cycle.md",
+      "id": "processes-belief-change-cycle",
+      "type": "process",
+      "title": "Цикл изменения убеждений",
+      "chapters": [
+        7
+      ],
+      "pages": "140-163"
+    },
+    {
+      "file": "processes/exercises.md",
+      "id": "processes-exercises",
+      "type": "practice",
+      "title": "Сводный каталог упражнений (25)",
+      "pages": "по главам"
+    },
+    {
+      "file": "patterns/overview.md",
+      "id": "patterns-overview",
+      "type": "pattern-system",
+      "title": "Система паттернов «Фокусов языка»",
+      "chapters": [
+        9
+      ],
+      "pages": "198-247"
+    },
+    {
+      "file": "patterns/intention.md",
+      "id": "som-intention",
+      "type": "pattern",
+      "number": 1,
+      "name": {
+        "ru": "Намерение",
+        "en": "Intention"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/redefine.md",
+      "id": "som-redefine",
+      "type": "pattern",
+      "number": 2,
+      "name": {
+        "ru": "Переопределение",
+        "en": "Redefine"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/consequences.md",
+      "id": "som-consequences",
+      "type": "pattern",
+      "number": 3,
+      "name": {
+        "ru": "Последствия",
+        "en": "Consequences"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/chunk-down.md",
+      "id": "som-chunk-down",
+      "type": "pattern",
+      "number": 4,
+      "name": {
+        "ru": "Разделение",
+        "en": "Chunk Down"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/chunk-up.md",
+      "id": "som-chunk-up",
+      "type": "pattern",
+      "number": 5,
+      "name": {
+        "ru": "Объединение",
+        "en": "Chunk Up"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/analogy-metaphor.md",
+      "id": "som-analogy-metaphor",
+      "type": "pattern",
+      "number": 6,
+      "name": {
+        "ru": "Аналогия",
+        "en": "Analogy/Metaphor"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/change-frame-size.md",
+      "id": "som-change-frame-size",
+      "type": "pattern",
+      "number": 7,
+      "name": {
+        "ru": "Изменение размера фрейма",
+        "en": "Change Frame Size"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/another-outcome.md",
+      "id": "som-another-outcome",
+      "type": "pattern",
+      "number": 8,
+      "name": {
+        "ru": "Другой результат",
+        "en": "Another Outcome"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/model-of-the-world.md",
+      "id": "som-model-of-the-world",
+      "type": "pattern",
+      "number": 9,
+      "name": {
+        "ru": "Модель мира",
+        "en": "Model of the World"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/reality-strategy.md",
+      "id": "som-reality-strategy",
+      "type": "pattern",
+      "number": 10,
+      "name": {
+        "ru": "Стратегия реальности",
+        "en": "Reality Strategy"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/counter-example.md",
+      "id": "som-counter-example",
+      "type": "pattern",
+      "number": 11,
+      "name": {
+        "ru": "Противоположный пример",
+        "en": "Counter Example"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/hierarchy-of-criteria.md",
+      "id": "som-hierarchy-of-criteria",
+      "type": "pattern",
+      "number": 12,
+      "name": {
+        "ru": "Иерархия критериев",
+        "en": "Hierarchy of Criteria"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/apply-to-self.md",
+      "id": "som-apply-to-self",
+      "type": "pattern",
+      "number": 13,
+      "name": {
+        "ru": "Примени к себе",
+        "en": "Apply to Self"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "patterns/meta-frame.md",
+      "id": "som-meta-frame",
+      "type": "pattern",
+      "number": 14,
+      "name": {
+        "ru": "Метафрейм",
+        "en": "Meta Frame"
+      },
+      "source_chapter": 9
+    },
+    {
+      "file": "examples/corpus.jsonl",
+      "id": "examples-corpus",
+      "type": "example-corpus",
+      "count": 50,
+      "sample": [
+        {
+          "id": "ex001",
+          "belief": "Я нашёл выход из проблемной ситуации, но она может повториться вновь.",
+          "pattern_id": null,
+          "source_page": 26
+        },
+        {
+          "id": "ex002",
+          "belief": "Я боюсь, что она слишком дорого стоит.",
+          "pattern_id": "som-redefine",
+          "source_page": 47
+        },
+        {
+          "id": "ex003",
+          "belief": "Сын постоянно дерётся в школе.",
+          "pattern_id": "som-chunk-down",
+          "source_page": 39
+        },
+        {
+          "id": "ex004",
+          "belief": "Отец всегда выступает против любых моих планов на будущее.",
+          "pattern_id": "som-intention",
+          "source_page": 40
+        },
+        {
+          "id": "ex005",
+          "belief": "Это слишком дорого.",
+          "pattern_id": "som-another-outcome",
+          "source_page": 44
+        },
+        {
+          "id": "ex006",
+          "belief": "Из этой идеи ничего не выйдет.",
+          "pattern_id": "som-consequences",
+          "source_page": 44
+        },
+        {
+          "id": "ex007",
+          "belief": "Это нереально.",
+          "pattern_id": null,
+          "source_page": 44
+        },
+        {
+          "id": "ex008",
+          "belief": "Это потребует слишком больших усилий.",
+          "pattern_id": null,
+          "source_page": 44
+        },
+        {
+          "id": "ex009",
+          "belief": "Мне нравится эта вещь, но я боюсь, что она слишком дорого стоит.",
+          "pattern_id": "som-intention",
+          "source_page": 46
+        },
+        {
+          "id": "ex010",
+          "belief": "Он опоздал — ему нельзя доверять.",
+          "pattern_id": "som-analogy-metaphor",
+          "source_page": null
+        }
+      ]
+    },
+    {
+      "file": "../GLOSSARY.md",
+      "id": "glossary",
+      "type": "glossary",
+      "title": "Глоссарий RU↔EN"
+    },
+    {
+      "file": "README.md",
+      "id": "readme",
+      "type": "readme",
+      "title": "Карта базы знаний"
+    }
+  ]
+}

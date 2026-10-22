@@ -1,0 +1,96 @@
+<mxfile type="device">
+  <diagram id="phrase-structure" name="Природа входа">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="790" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="deep" value="&lt;b&gt;ГЛУБИННАЯ СТРУКТУРА&lt;/b&gt;&lt;br&gt;первичный опыт — территория,&lt;br&gt;богаче любой карты (с. 23)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="340" y="675" width="330" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="f1" value="&lt;b&gt;1 · СЕНСОРНЫЕ КАНАЛЫ&lt;/b&gt;&lt;br&gt;что вообще может дойти:&lt;br&gt;органы чувств — «понижающий клапан» (с. 22)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="340" y="515" width="330" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="f2" value="&lt;b&gt;2 · ВНУТРЕННИЕ ЗНАНИЯ&lt;/b&gt;&lt;br&gt;что замечаю и как читаю:&lt;br&gt;мысли · убеждения · ценности · самоощущение (с. 22)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="340" y="355" width="330" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="f3" value="&lt;b&gt;3 · ЯЗЫК&lt;/b&gt;&lt;br&gt;как пакуется в слова:&lt;br&gt;глубинная структура → поверхностная (с. 17–18)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="340" y="195" width="330" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="surface" value="&lt;b&gt;ПОВЕРХНОСТНАЯ СТРУКТУРА&lt;/b&gt; — «сказанные слова»&lt;br&gt;&lt;b&gt;= ВХОД МОДУЛЯ ДИАГНОСТИКИ&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="330" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="strip" value="&lt;b&gt;механизмы фильтрации —&lt;/b&gt;&lt;br&gt;&lt;b&gt;на каждом уровне (с. 22)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;dashed=1;fillColor=#f5f5f5;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="70" y="355" width="180" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="gen" value="обобщение" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;" vertex="1" parent="strip">
+          <mxGeometry x="15" y="60" width="150" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="dist" value="искажение" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;" vertex="1" parent="strip">
+          <mxGeometry x="15" y="106" width="150" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="del" value="опущение" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;" vertex="1" parent="strip">
+          <mxGeometry x="15" y="152" width="150" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="exd" value="&lt;b&gt;ПРИМЕР · всё происходящее&lt;/b&gt;&lt;br&gt;голос, слайды, кивки слушателей, один зевок" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#f5f5f5;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="760" y="675" width="320" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="ex1" value="&lt;b&gt;сужение&lt;/b&gt;&lt;br&gt;из всего потока до сознания дошёл зевок" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#f5f5f5;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="760" y="515" width="320" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="ex2" value="&lt;b&gt;толкование&lt;/b&gt;&lt;br&gt;«я неинтересен»: кивки опущены, зевок → «ему скучно со мной», «всегда так»" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#f5f5f5;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="760" y="355" width="320" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="ex3" value="&lt;b&gt;упаковка&lt;/b&gt;&lt;br&gt;выбор слов: связка «потому что», квантор «все»" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#f5f5f5;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="760" y="195" width="320" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="exs" value="&lt;b&gt;фраза&lt;/b&gt;&lt;br&gt;«Я неинтересный, потому что все скучают на моих докладах»" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="320" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_df1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="deep" target="f1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_f1f2" value="сенсорный опыт" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="f1" target="f2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_f2f3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="f2" target="f3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_f3s" value="«урезан, искажен, обобщен» — рис. 1 (с. 24)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="f3" target="surface">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#999999;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="strip" target="f1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#999999;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="strip" target="f2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#999999;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" edge="1" parent="1" source="strip" target="f3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x_d1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#999999;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="exd" target="ex1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x_12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#999999;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="ex1" target="ex2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x_23" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#999999;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="ex2" target="ex3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x_3s" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#999999;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="ex3" target="exs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="x_in" value="пример входа" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="exs" target="surface">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="back" value="обратный ход диагностики: «Как ты узнаёшь, что…?» (№10; с. 17)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#cc0000;fontColor=#cc0000;fontSize=11;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="surface" target="deep">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="90"/>
+              <mxPoint x="20" y="717"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

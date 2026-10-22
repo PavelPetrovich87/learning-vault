@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 3 — шапка" id="ex-1-header">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="940" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 3 (сложный): шапка видеоплатформы — shared/ui или app?" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Видеоплатформа.&#xa;&#xa;Вчера: шапка = логотип + ссылки навигации. Живёт на всех роутах.&#xa;&#xa;Сегодня: в шапке нужен аватар пользователя с меню (сущность!)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Шаг 2: логотип и навигация — без бизнес-логики; глава §3.2: «бизнес-тематическим (логотип компании, каркас страницы) быть допустимо» → shared/ui" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Аватар — данные пользователя (сущность, уровень 3). Шапка становится композицией сущностей на всех роутах" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="210" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Глава §3.2 (callout): «UI уровня всего приложения (глобальные лейауты) — в app»; SKILL.md §1: «an app-wide layout goes to app» → app/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="320" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог: было → стало" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree1" value="БЫЛО — простая шапка:&#xa;src/shared/&#xa;└── ui/&#xa;    └── TheHeader/&#xa;        ├── TheHeader.tsx&#xa;        └── index.ts" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#82b366;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="tree2" value="СТАЛО — шапка-композиция:&#xa;src/&#xa;├── app/&#xa;│   ├── header/&#xa;│   │   └── AppHeader.tsx&#xa;│   └── router.tsx&#xa;├── entities/&#xa;│   └── user/ui/UserMenu.tsx   ← сущность (ур. 3)&#xa;└── shared/ui/TheHeader/       ← логотип, навигация" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="270" width="420" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// app/header/AppHeader.tsx — app-wide layout&#xa;import { Logo, NavLinks } from &quot;@/shared/ui/TheHeader&quot;;&#xa;import { UserMenu } from &quot;@/entities/user&quot;;&#xa;&#xa;export const AppHeader = () =&gt; (&#xa;  &lt;header className=&quot;app-header&quot;&gt;&#xa;    &lt;Logo /&gt;&#xa;    &lt;NavLinks /&gt;&#xa;    &lt;UserMenu /&gt;&#xa;  &lt;/header&gt;&#xa;);&#xa;&#xa;// импорты строго вниз: app → entities → shared ✓" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="510" width="420" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Почему не оставить в shared/ui?&#xa;&#xa;Shared не может импортировать сущности: он самый нижний слой, импорт только строго вниз. Шапке с аватаром нужен entities/user — значит, ей место выше: в app. Простая шапка оставалась в shared, пока не знала о пользователе." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="700" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: граница проходит по знанию о пользователе. Без бизнес-контекста — «каркас страницы» в shared/ui; композиция с сущностями на всех роутах — глобальный лейаут в app. Это тот же рефакторинг-триггер, что у TheHeader в визуализаторе (этап 6)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="770" y="810" width="470" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

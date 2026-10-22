@@ -1,11 +1,11 @@
 ---
-status: analyzing
+status: archived
 tags: [playwright, testing, e2e, selectors, xpath]
 source:
   - https://playwright.dev/docs/other-locators#xpath-locator
   - https://playwright.dev/docs/locators
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-10-21
 difficulty: beginner
 ---
 

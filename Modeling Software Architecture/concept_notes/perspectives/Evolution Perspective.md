@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [c4-model, architecture, perspective, evolution, changeability, udemy, fundamentals]
 created: 2026-07-10
-updated: 2026-07-10
+updated: 2026-10-21
 difficulty: intermediate
 ---
 
@@ -91,7 +91,7 @@ graph TD
 - **Parent Topic:** [[Perspective]], [[Viewpoint]]
 - **Most relevant viewpoints:** [[Key Elements of Architecture View]] (coupling/cohesion), [[Information Viewpoint]] (schema evolution), [[Deployment Viewpoint]] (independent deployability)
 - **Sibling perspectives:** [[Development Resource Perspective]] (maintainability), [[Cost Perspective]] (upfront design effort)
-- **Related:** [[System Architecture]] (Maintainability/Evolvability are Quality Attributes)
+- **Related:** [[System Architecture]] (Maintainability/Evolvability are Quality Attributes), [[How to Version Control the Architecture Model]] (rollback, traceability, and drift detection are how the model itself stays evolvable alongside the system)
 - **Prerequisites:** [[Perspective]], [[Key Elements of Architecture View]].
 
 ## ❓ Active Recall Questions

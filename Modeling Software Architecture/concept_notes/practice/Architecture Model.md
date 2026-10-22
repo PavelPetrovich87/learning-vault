@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [c4-model, architecture, process, modeling, udemy, fundamentals]
 created: 2026-07-10
-updated: 2026-07-10
+updated: 2026-10-21
 difficulty: intermediate
 ---
 
@@ -136,7 +136,7 @@ The viewpoint sequence is the **same**, but the *method* changes:
 - **Parent Topic:** [[System Modeling]] (the activity this process belongs to), [[Modeling Software Architecture]]
 - **The 7 steps, as notes:** [[Functional Viewpoint]] → [[Context Viewpoint]] → [[Information Viewpoint]] → [[Operational Viewpoint]] → [[Development Viewpoint]] → [[Concurrency Viewpoint]] → [[Deployment Viewpoint]]
 - **After the views: apply perspectives:** [[Perspective]] → [[Security Perspective]], [[Performance and Scalability Perspective]], [[Availability and Resilience Perspective]], [[Evolution Perspective]], [[Development Resource Perspective]], [[Cost Perspective]], [[Location Perspective]]
-- **Related:** [[Model]] (the output of this process), [[System]] (what you're modeling), [[Levels of Abstraction]] (which system you're modeling), [[Communicating the Model]] (the model must be communicated, not just drawn)
+- **Related:** [[Model]] (the output of this process), [[System]] (what you're modeling), [[Levels of Abstraction]] (which system you're modeling), [[Communicating the Model]] (the model must be communicated, not just drawn), [[How to Document the Architecture Model]] (the next step once the model exists — Proposal / ADD / ADR)
 - **Prerequisites:** [[System Modeling]], [[Viewpoint]], [[Perspective]].
 
 ## ❓ Active Recall Questions
@@ -170,3 +170,4 @@ The viewpoint sequence is the **same**, but the *method* changes:
 - [[Deployment Viewpoint]]
 - [[Perspective]]
 - [[Model]]
+- [[How to Document the Architecture Model]]

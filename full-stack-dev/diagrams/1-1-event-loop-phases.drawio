@@ -1,0 +1,58 @@
+<mxfile host="65bd71144e" modified="2026-08-05T18:00:00.000Z" agent="fullstack-agentic-trainer" version="22.0.0" type="device">
+  <diagram name="Event loop phases" id="event-loop-phases">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Шесть фаз event loop (Node docs)&lt;/b&gt;" style="text;html=1;align=center;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="1. timers&#xa;setTimeout / setInterval" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="2. pending callbacks&#xa;(отложенные I/O-ошибки)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8e8e8;strokeColor=#999" vertex="1" parent="1">
+          <mxGeometry x="280" y="90" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="3. idle, prepare&#xa;(internal only)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontColor=#999" vertex="1" parent="1">
+          <mxGeometry x="500" y="90" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" value="4. poll ◄── блок здесь&#xa;(новые I/O-события, epoll)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="220" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" value="5. check&#xa;setImmediate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="280" y="220" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p6" value="6. close callbacks&#xa;socket.on('close'...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="micro" value="⚡ между фазами:&#xa;nextTickQueue → microtaskQueue&#xa;(Promise). Приоритет выше фаз!" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="220" y="330" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333;endArrow=classic" edge="1" parent="1" source="p1" target="p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333;endArrow=classic" edge="1" parent="1" source="p2" target="p3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333;endArrow=classic" edge="1" parent="1" source="p3" target="p4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333;endArrow=classic" edge="1" parent="1" source="p4" target="p5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333;endArrow=classic" edge="1" parent="1" source="p5" target="p6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e61" value="следующий оборот" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666;dashed=1;endArrow=classic;fontSize=10" edge="1" parent="1" source="p6" target="p1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="180" />
+              <mxPoint x="40" y="180" />
+              <mxPoint x="40" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

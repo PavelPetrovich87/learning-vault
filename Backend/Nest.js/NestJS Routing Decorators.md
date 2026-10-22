@@ -1,3 +1,10 @@
+---
+status: stable
+tags: []
+created: 2026-07-09
+updated: 2026-10-21
+---
+
 # NestJS Routing Decorators
 
 > [!abstract] Executive Summary (ELI5)

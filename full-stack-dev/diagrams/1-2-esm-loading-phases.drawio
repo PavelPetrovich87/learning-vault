@@ -1,0 +1,34 @@
+<mxfile host="fullstack-agentic-trainer" modified="2026-09-08T12:00:00.000Z" agent="fullstack-agentic-trainer" version="22.0.0" type="device">
+  <diagram name="ESM loading phases" id="esm-loading-phases">
+    <mxGraphModel dx="900" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="420" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Три фазы загрузки ES-модулей (по [НД] гл.2)&lt;/b&gt;" style="text;html=1;align=center;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="350" y="30" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" value="&lt;b&gt;Phase 1 — Construction&lt;/b&gt;&#xa;(парсинг)&#xa;&#xa;DFS от entry point: найти все импорты, загрузить файлы. Каждый модуль посещается один раз — циклы срезаются" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ph2" value="&lt;b&gt;Phase 2 — Instantiation&lt;/b&gt;&#xa;(инстанциация)&#xa;&#xa;Для каждого экспорта — именованная ссылка БЕЗ значения; линковка импортов ↔ экспортов. Код НЕ выполняется" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="405" y="120" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ph3" value="&lt;b&gt;Phase 3 — Evaluation&lt;/b&gt;&#xa;(выполнение)&#xa;&#xa;Post-order: листья первыми, entry — ПОСЛЕДНИМ. Ссылки получают фактические значения" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="770" y="120" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="все модули найдены" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;fontSize=10" edge="1" parent="1" source="ph1" target="ph2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" value="весь граф слинкован" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82b366;fontSize=10" edge="1" parent="1" source="ph2" target="ph3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="meta" value="Метафора книги: фаза 1 находит все точки, фаза 2 соединяет точки в пути, фаза 3 проходит пути" style="text;html=1;align=center;fontSize=11;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="250" y="270" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="&lt;b&gt;Ключевое следствие:&lt;/b&gt; фазы разделены — никакой код не выполняется, пока весь граф не построен =&gt; импорты обязаны быть статическими (статанализ =&gt; tree shaking). Всё это происходит ДО первого оборота event loop (стартовая фаза процесса, не «работа внутри фаз»)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="1020" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

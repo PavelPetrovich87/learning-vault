@@ -1,3 +1,10 @@
+---
+status: analyzing
+tags: [research, in-progress]
+created: 2026-07-09
+updated: 2026-10-21
+---
+
 # Динамические воркфлоу в Claude Code: глубокий анализ идей, паттернов и применение в реальном мире
 
 ## Введение

@@ -1,0 +1,104 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="zapolnenie-ramki" name="Заполнение рамки">
+    <mxGraphModel dx="1200" dy="1500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1050" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="in1" value="ВХОД ЭТАПА&lt;br&gt;источник: текст · человек · никто&lt;br&gt;данные: мешанина фракций или молчание&lt;br&gt;+ сущности домена (приносит проектировщик)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="ШАГ 1&lt;br&gt;источник?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="420" y="150" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="АНКЕТА · шаг 2&lt;br&gt;(только режим интервью)&lt;br&gt;6 вопросов владельцу вслух;&lt;br&gt;выход: бриф-черновик" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="ДЕТЕКТОРЫ · шаг 3&lt;br&gt;скан текста:&lt;br&gt;ярлык без числа → «сколько?»&lt;br&gt;число без владельца → «кто установил?»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="360" y="260" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="ЩУПЫ · шаг 4&lt;br&gt;вопрос = щуп × цель&lt;br&gt;цели: поля 1–5 + сущности домена" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="360" y="390" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="proto" value="ПРОТОКОЛ ОПРОСА&lt;br&gt;строка {вопрос · кандидат · статус · куда_ляжет}&lt;br&gt;инвариант: каждая строка получает судьбу" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="510" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sprav" value="СПРАВОЧНИК&lt;br&gt;порядки величин" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="630" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vlad" value="ВЛАДЕЛЬЦЫ ЧИСЕЛ&lt;br&gt;(внешние;&lt;br&gt;запись в рамку — только они)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="780" y="550" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="ШАГ 5 · кандидаты и судьбы&lt;br&gt;технические ← справочник; поведенческие «по себе»&lt;br&gt;раскладка: обещание → П3 · условие → П4 ·&lt;br&gt;поведение → П2 «делаем» · граница → П2 «не делаем»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="640" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" value="ШАГ 6 · раздача судеб" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="340" y="790" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ramka" value="РАМКА · поля 1–5&lt;br&gt;read-only для цикла;&lt;br&gt;пишет владелец (уточнение / торг)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="340" y="870" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="reestr" value="РЕЕСТР ВОПРОСОВ&lt;br&gt;{тема · владелец · вопрос ·&lt;br&gt;развилка · подстановка} → наружу" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="780" y="780" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="vych" value="вычеркнуто&lt;br&gt;(остаётся в протоколе)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="780" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" value="ШАГ 7&lt;br&gt;все судьбы?&lt;br&gt;инварианты рамки?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="430" y="990" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="done" value="ЭТАП ЗАВЕРШЁН&lt;br&gt;выход: рамка + протокол + реестр вопросов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1120" width="350" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dop" value="ДО-ЗАПОЛНЕНИЕ&lt;br&gt;шаги 5–7&lt;br&gt;для одной строки" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="990" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="monit" value="МОНИТОРИНГ&lt;br&gt;(после запуска)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="880" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oz" value="ОЦЕНЩИК&lt;br&gt;требования × сценарии × состав" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1230" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bol" value="РЕЕСТР БОЛЕЙ&lt;br&gt;очередь по серьёзности" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="1230" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sh1" value="ШАГ 1 · СОСТАВ&lt;br&gt;(цикл)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1230" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sh2" value="ШАГ 2 · БЮДЖЕТЫ&lt;br&gt;(цикл)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="1230" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cap" value="связь с существующим алгоритмом — карта-алгоритма.drawio" style="text;html=1;align=center;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="290" y="1310" width="460" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="in1" target="s1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="человек" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s1" target="s2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="текст" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s1" target="s3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="бриф-черновик" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s2" target="s3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s3" target="s4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="ответы → строки" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="s2" target="proto"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="маркеры → строки" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s3" target="proto"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" value="молчания → строки" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s4" target="proto"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="proto" target="s5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" value="порядки" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="sprav" target="s5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" value="ответы" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="vlad" target="s5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s5" target="s6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" value="владелец_ответил · предположение" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s6" target="ramka"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" value="ждём_владельца" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s6" target="reestr"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="s6" target="vych"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" value="вопросы наружу" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="reestr" target="vlad"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" value="ответ пришёл" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="reestr" target="dop"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="dop" target="s5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e19" value="уточнение / торг — запись в рамку" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="vlad" target="ramka"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="ramka" target="s7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e21" value="чисто" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s7" target="done"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e22" value="строки без судьбы" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#cc0000;" edge="1" parent="1" source="s7" target="s5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e23" value="непокрытая цель" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#cc0000;" edge="1" parent="1" source="s7" target="s4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e24" value="рамка в работу" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="done" target="oz"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e25" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="oz" target="bol"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e26" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="bol" target="sh1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="sh1" target="sh2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e28" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="monit" target="ramka"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

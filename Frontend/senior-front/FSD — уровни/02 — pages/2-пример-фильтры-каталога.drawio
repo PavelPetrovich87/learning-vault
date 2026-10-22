@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 2 — фильтры каталога" id="ex-2-catalog-filters">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="840" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 2 (средний): фильтры каталога → ui + model слайса страницы" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Магазин, страница каталога: панель фильтров (категория, диапазон цены, сортировка) + сетка товаров. Состояние фильтров нужно и панели, и сетке — но только этой странице." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Шаг 1: один потребитель — страница каталога → слайс pages/catalog" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. SKILL.md §5-1: «Page-specific forms, validation, … state management» остаются в pages — фильтры это состояние экрана, не домен" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="175" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Сегменты: вид → ui/Filters.tsx и CatalogGrid.tsx; состояние экрана → model/filters.ts (глава: «отдельная модель нехарактерна» — но это именно случай состояния экрана)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="280" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/pages/catalog/&#xa;├── api/&#xa;│   └── fetch-products.ts&#xa;├── model/&#xa;│   └── filters.ts          ← состояние экрана&#xa;├── ui/&#xa;│   ├── CatalogPage.tsx&#xa;│   ├── Filters.tsx&#xa;│   └── CatalogGrid.tsx&#xa;└── index.ts" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// pages/catalog/model/filters.ts — состояние экрана&#xa;import { createStore } from &quot;effector&quot;;&#xa;&#xa;export const $category = createStore&lt;string | null&gt;(null);&#xa;export const $priceRange = createStore&lt;[number, number] | null&gt;(null);&#xa;export const $sort = createStore&lt;&quot;popular&quot; | &quot;cheap&quot; | &quot;expensive&quot;&gt;(&quot;popular&quot;);&#xa;&#xa;// pages/catalog/ui/Filters.tsx — вид панели&#xa;import { $category, $priceRange, categoryChanged } from &quot;../model/filters&quot;;&#xa;&#xa;export const Filters = () =&gt; {&#xa;  const category = useUnit($category);&#xa;  // … контролы фильтров&#xa;};" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="340" width="420" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Почему это не entity и не feature?&#xa;&#xa;Фильтры каталога — не «понятие реального мира» (не существительное бизнеса) и не пользовательское действие для нескольких страниц. Это состояние одного экрана. Крошечное состояние вообще живёт в компонентах; сюда — потому что его читают Filters и CatalogGrid." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="700" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: pages/catalog/{ui, model}. Внутри слайса сегменты общаются относительными путями (анти-цикл, уровень 5), наружу торчит только index.ts со страницей." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="590" width="700" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

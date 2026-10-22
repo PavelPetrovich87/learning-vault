@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Алгоритм — shared и app" id="alg-1-shared-app">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Уровень 1: куда кладём инфраструктуру (shared / app)&#xa;по decision framework скилла — SKILL.md §2, Шаги 1 → 2 → 5" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="16" width="760" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="Новый код ищет место" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#64748b;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="460" y="76" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="q1" value="Шаг 1: Where is this code used?&#xa;Где этот код используется?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="440" y="150" width="360" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="out1" value="Слайс этой страницы&#xa;→ Уровень 2 (pages)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="60" y="168" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="q2" value="Шаг 2: переиспользуемая инфраструктура&#xa;без бизнес-логики?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="440" y="296" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="q2note" value="«Business logic is a rule the product enforces on its own data, such as applying a discount to an order.» — SKILL.md §2&#xa;(Бизнес-логика — правило продукта о собственных данных, например скидка к заказу. Обмен данными с бэкендом и CRUD-boilerplate — НЕ бизнес-логика.)" style="text;html=1;fontSize=10.5;fontColor=#475569;align=left;whiteSpace=wrap" vertex="1" parent="1">
+          <mxGeometry x="830" y="296" width="370" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="out2" value="Бизнес-контекст (правило продукта)&#xa;→ Уровни 3–4 (entities / features)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="830" y="432" width="370" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="q3" value="Шаг 5: дело всего приложения?&#xa;(глобальные провайдеры, роутер, тема)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="440" y="446" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ok5" value="app/&#xa;providers · router · styles · fonts · entrypoint · аналитика" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="456" width="330" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hub" value="Какой тип инфраструктуры?&#xa;→ сегмент shared (Шаг 2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#64748b;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="470" y="596" width="300" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ok1" value="UI-компоненты&#xa;→ shared/ui" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="706" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ok2" value="Утилиты&#xa;→ shared/lib (format-price.ts, не utils.ts)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="706" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ok3" value="API-клиент, константы роутов, CRUD&#xa;→ shared/api / shared/config" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="706" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ok4" value="Токены, сессия, login-утилиты&#xa;→ shared/auth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="940" y="706" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="golden" value="Golden Rule: «When in doubt, keep it in pages/.» — SKILL.md §2 (Сомневаешься — оставляй в pages/. Извлекай, только когда выполняется extraction rule — уровень 3.)" style="text;html=1;fontSize=11.5;fontColor=#7c2d12;align=center;whiteSpace=wrap;fillColor=#fff7ed;strokeColor=#fdba74;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="806" width="1170" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="start" target="q1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="одна страница" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="q1" target="out1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="2+ страниц / всё приложение" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="q1" target="q2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="нет: правило продукта" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#b85450;fontSize=11" edge="1" parent="1" source="q2" target="out2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="да" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="q2" target="q3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="да" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="q3" target="ok5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="нет" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="q3" target="hub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="hub" target="ok1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="hub" target="ok2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="hub" target="ok3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="hub" target="ok4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

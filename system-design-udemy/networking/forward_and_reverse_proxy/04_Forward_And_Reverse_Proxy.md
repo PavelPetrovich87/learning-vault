@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [system-design, udemy, networking, proxy, forward-proxy, reverse-proxy, research]
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-10-21
 ---
 
 # 04_Forward_And_Reverse_Proxy

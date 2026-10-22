@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [system-design, udemy, networking, research]
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-10-21
 ---
 
 # 01_IP_Addresses

@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 3 — миграция" id="ex-6-migration">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 3 (сложный): легаси-магазин (routes / containers / utils) → FSD, пять шагов pages-first" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="250" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (магазин, легаси)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="src/&#xa;├── routes/          ← роуты с логикой&#xa;├── containers/      ← «умные» компоненты&#xa;├── components/      ← все «глупые»&#xa;├── actions/  reducers/  selectors/&#xa;└── utils/  helpers/  constants/&#xa;&#xa;Сигналы: новичок входит в продуктив 3 месяца; правка каталога ломает чекаут; контекст не влезает в голову. Команда согласна." style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="330" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Пять шагов from-custom (migration-guide, Part 2) ≡ три шага главы §8.3" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155;verticalAlign=top;whiteSpace=wrap" vertex="1" parent="1">
+          <mxGeometry x="420" y="60" width="840" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="① Делим код по страницам: pages/{home, catalog, product, cart, checkout}; роуты становятся тонкими реэкспортами. «Pages may reference each other for now» — потом починим" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="420" y="90" width="840" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="② Отделяем остальное: не импортирует pages → shared (staging!); импортирует pages/роуты → app. Это промежуточный ход: «Do not read &quot;does not import pages&quot; as a reason for code to live in Shared»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="420" y="190" width="840" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="③ Кросс-импорты между страницами: копипаст («not architecturally wrong») или сегмент shared. DRY держим только для того, что обязано жить согласованно" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="420" y="300" width="840" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="④ Распаковываем Shared: бизнес-код возвращается на свои места — правила товара в model страниц, затем (по extraction rule, уровень 3) в entities/{product, cart}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="420" y="400" width="840" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="⑤ Сегменты по техническому назначению внутри слайсов (ui / api / model); опционально: фичи из общих Redux-слайсов, чистый UI-фундамент в shared/ui" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="420" y="500" width="840" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог (после шагов ①–⑤, реальные месяцы, не один PR)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="330" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/&#xa;├── app/&#xa;│   ├── routes/          ← тонкие роуты&#xa;│   ├── providers/  styles/&#xa;├── pages/&#xa;│   ├── home/  catalog/  product/&#xa;│   └── cart/  checkout/&#xa;├── entities/&#xa;│   ├── product/   ← шаг ④ + extraction rule&#xa;│   └── cart/&#xa;└── shared/&#xa;    ├── ui/  api/  lib/  config/&#xa;    └── (без бизнес-правил)" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#82b366;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="330" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// шаг ①: routes/products.[id].tsx — тонкий роут&#xa;export { ProductPage as default } from &quot;@/pages/product&quot;;&#xa;&#xa;// шаг ③: кросс-импорт страниц — два выхода&#xa;// ❌ import { SortBar } from &quot;@/pages/catalog&quot;;   // сосед&#xa;// ✅ копия SortBar в pages/search (пока дрейфят)&#xa;// ✅ или общий вид → ниже (shared/ui | entities)&#xa;&#xa;// шаг ④: бизнес из staging-shared — домой&#xa;// shared/helpers/…  →  pages/catalog/model/…&#xa;//                      →  entities/product/model/… (когда заслужено)" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="420" y="610" width="840" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Соответствие главе §8.3:&#xa;шаги ①–② ≈ «формировать App и Shared, раскидать UI по Pages широкими мазками, даже с нарушениями»; шаги ③–⑤ ≈ «постепенно разрешать нарушения и извлекать Entities/Features». Совет главы: новых больших сущностей в период миграции не заводить — сначала чистые границы." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=11.5;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="790" width="330" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: миграция — процесс, а не событие. Pages-first, staging-приём для shared, копипаст как легальный инструмент перехода, extraction rule — только на стабильных границах. Визуализатор, этап 8 — тот же эпилог." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="420" y="920" width="840" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s5" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

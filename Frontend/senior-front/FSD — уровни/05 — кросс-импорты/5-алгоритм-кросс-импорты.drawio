@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Алгоритм — кросс-импорты" id="alg-5-cross-imports">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Уровень 5: два слайса одного слоя «делят» код — decision flow скилла (cross-import-patterns)" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="250" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="Импорт между слайсами ОДНОГО слоя (pages/features/entities)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#64748b;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="430" y="60" width="440" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="q0" value="Импорт из index&#xa;СВОЕГО слайса (&quot;../&quot;)?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5" vertex="1" parent="1">
+          <mxGeometry x="920" y="130" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="circ" value="CIRCULAR: index → файл → index&#xa;Фикс: внутри слайса — относительный ПОЛНЫЙ путь&#xa;(&quot;./model/validation&quot;); между слайсами — абсолютные.&#xa;Index — на диету: наружу только необходимое" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="900" y="270" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ql" value="Какой слой?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="460" y="140" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="entLbl" value="ENTITIES" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="60" y="250" width="560" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="① Один цельный домен?&#xa;→ СЛИТЬ границы. Стоп." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="② Может, страницу/фичу держать обе?&#xa;→ КОМПОЗИЦИЯ выше. Стоп." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="360" y="280" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="③ Общее — нейтральная инфраструктура?&#xa;→ в shared/. Стоп." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="60" y="360" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="④ Границы отдельны, зависимость настоящая?&#xa;→ @x — ПОСЛЕДНЕЕ средство.&#xa;producer/@x/consumer; документировать почему" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="390" y="360" width="330" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xnote" value="Direction rule: в entities/A/@x/B — A производитель, B потребитель.&#xa;Только entities. Минимальная поверхность. Периодически пересматривать.&#xa;Несколько @x между одними сущностями = границы неправильные, сливать" style="text;html=1;fontSize=10.5;fontColor=#475569;align=left;whiteSpace=wrap" vertex="1" parent="1">
+          <mxGeometry x="60" y="450" width="660" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="feaLbl" value="FEATURES / PAGES (стратегии в порядке предпочтения)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="760" y="530" width="520" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="fa" value="Strategy A: всегда меняются вместе?&#xa;→ merge в один слайс" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="760" y="560" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fb" value="Strategy B: общее — доменное правило?&#xa;→ в entities (UI остаётся в фиче)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1030" y="560" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fc" value="Strategy C: собирается слоем выше?&#xa;→ IoC: render props / slots / DI&#xa;(страница импортирует обе и соединяет)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="760" y="650" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fd" value="Strategy D: переиспользование неизбежно?&#xa;→ ТОЛЬКО через index.ts.&#xa;Никогда в model/, store/, внутренности.&#xa;НЕ @x (он для entities)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1030" y="650" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="strict" value="Строгость — контекст: ранний продукт → немного кросс-импортов допустимо (speed trade-off); fintech/долгоживущие → строже. Введённый кросс-импорт = осознанное решение: комментарий в коде (почему A–C не подходят) + периодический пересмотр" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="60" y="770" width="660" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="golden" value="«The first move is always to remove the dependency … Strategy D and @x are the documented exceptions … not a second way of working.» — cross-import-patterns · Двунаправленный импорт (A↔B) — сигнал: границы или композиция неправильные" style="text;html=1;fontSize=11.5;fontColor=#7c2d12;align=center;whiteSpace=wrap;fillColor=#fff7ed;strokeColor=#fdba74;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="760" y="770" width="520" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="start" target="ql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#b85450" edge="1" parent="1" source="start" target="q0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t0b" value="да" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#b85450;fontSize=11" edge="1" parent="1" source="q0" target="circ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1a" value="entities" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="ql" target="e1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="ql" target="e2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="e1" target="e3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1a4" value="нет" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="e2" target="e4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1b" value="features / pages" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;fontSize=11" edge="1" parent="1" source="ql" target="fa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1b2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="fa" target="fb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1b3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="fb" target="fc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1b4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="fc" target="fd">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

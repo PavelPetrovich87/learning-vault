@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [nest-js, cli, backend, typescript]
 source: https://docs.nestjs.com/cli/overview
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-10-21
 difficulty: beginner
 ---
 

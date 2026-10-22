@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 1 — баннеры главной" id="ex-2-banners">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 1 (простой): запрос баннеров главной → pages/home/api" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Магазин. Главной странице нужен запрос promotional-баннеров. Баннеры не показываются больше нигде." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Шаг 1: «Used in only one page → keep it in that pages/ slice» — один потребитель" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Сегмент по назначению: запрос данных страницы → api (глава §3.2: «запросы данных и мутаций (api)»)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="190" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Snapshot 0 walkthrough: «Each request has one consumer, so it sits in that page's api/ segment»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/&#xa;├── app/&#xa;├── pages/&#xa;│   └── home/&#xa;│       ├── api/&#xa;│       │   └── fetch-banners.ts   ← запрос живёт здесь&#xa;│       ├── ui/&#xa;│       │   └── HomePage.tsx&#xa;│       └── index.ts&#xa;└── shared/&#xa;    └── api/client.ts            ← общий клиент (ур. 1)" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// pages/home/api/fetch-banners.ts&#xa;import { apiClient } from &quot;@/shared/api&quot;;&#xa;&#xa;export type Banner = {&#xa;  id: string;&#xa;  title: string;&#xa;  imageUrl: string;&#xa;  targetUrl: string;&#xa;};&#xa;&#xa;export const fetchBanners = () =&gt;&#xa;  apiClient.get&lt;Banner[]&gt;(&quot;/promotional/banners&quot;);&#xa;&#xa;// pages/home/ui/HomePage.tsx — единственный потребитель&#xa;const { data: banners } = useQuery({&#xa;  queryKey: [&quot;banners&quot;],&#xa;  queryFn: fetchBanners,&#xa;});" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="360" width="420" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Когда это переедет?&#xa;&#xa;Если баннеры понадобятся второй странице — Шаг 2 спросит, есть ли в запросе доменные правила. «a URL with a response shape is not a rule» → обычный запрос уезжает в shared/api (Snapshot 1 walkthrough), не в entities." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="700" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: pages/home/api. Один потребитель — запрос сидит в слайсе страницы и удаляется вместе с ней. Никакого «общего» места до второго реального потребителя." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="580" width="700" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

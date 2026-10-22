@@ -60,9 +60,9 @@ difficulty: advanced
 ## 📚 Research Sources & Methodology
 
 > [!info] Deep Research Prompts
-> - **Phase 1:** [[ai-era-fullstack-interview-research-prompt]] — общий ландшафт (результат: `ai-era-full-stack-result/report/report.md`). Сфокусировался на AI-native темах.
-> - **Phase 2:** [[ai-era-classic-questions-research-prompt-v2]] — как **классические** вопросы мутировали в AI-эру (закрывает пробел Phase 1).
-> - **Phase 3 (MASTER):** [[ai-era-interview-master-research-prompt-v3]] — единый forward-looking синтез обоих треков с вшитым baseline. **Это финальный промпт для запуска.**
+> - **Phase 1:** ai-era-fullstack-interview-research-prompt — общий ландшафт (результат: `ai-era-full-stack-result/report/report.md`). Сфокусировался на AI-native темах.
+> - **Phase 2:** ai-era-classic-questions-research-prompt-v2 — как **классические** вопросы мутировали в AI-эру (закрывает пробел Phase 1).
+> - **Phase 3 (MASTER):** ai-era-interview-master-research-prompt-v3 — единый forward-looking синтез обоих треков с вшитым baseline. **Это финальный промпт для запуска.**
 
 ### Sources to Explore
 - [ ] Recent interview experience posts (Blind, LeetCode Discuss, Reddit r/cscareerquestions)
@@ -147,10 +147,10 @@ Fullstack Interview 2026
 ---
 
 ## 🔗 Deep Connections
-- **Related Research:** [[Harness-Engineering-Overview]] — harness skills themselves are an AI-era pattern
-- **Learning Path:** [[10-week-fullstack-roadmap-v3]] — needs to be updated based on interview findings
+- **Related Research:** [[1-Harness-Engineering-Overview]] — harness skills themselves are an AI-era pattern
+- **Learning Path:** 10-week-fullstack-roadmap-v3 — needs to be updated based on interview findings
 - **Concept Notes:** [[System-Design-Flashcards]], [[URL-Shortener-Design]], [[CAP-Theorem]]
-- **Applied In:** [[2026-06-08 — Daily Plan|Daily Plan 2026-06-08]] — today's planning session
+- **Applied In:** Daily Plan 2026-06-08 (файл не сохранился) — today's planning session
 
 ---
 

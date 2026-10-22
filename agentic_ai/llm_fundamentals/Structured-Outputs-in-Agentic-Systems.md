@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [agentic-ai, structured-output, llm, schema, validation]
 source: 
 created: 2026-06-23
-updated: 2026-06-23
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

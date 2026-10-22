@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [c4-model, architecture, communication, modeling, udemy, fundamentals]
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-10-21
 difficulty: beginner
 ---
 
@@ -76,6 +76,7 @@ graph LR
 *Preserve the model for asynchronous consumption.*
 - Architecture Decision Records (ADRs), design docs, README files, and wiki pages.
 - Written documents should reference diagrams, not replace the thinking behind them.
+- See [[How to Document the Architecture Model]] for the three structured document types — Proposal, Architecture Description Document (ADD), and ADR — that turn written communication into a durable, traceable record.
 
 > [!tip] Implementation Note
 > When presenting a model, state the question it answers in the first 30 seconds. If the audience does not know why they are looking at the model, they will not remember it.

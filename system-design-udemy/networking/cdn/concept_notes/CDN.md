@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 tags: [system-design, networking, cdn, caching, latency, availability, edge-computing]
 source: Udemy System Design Course
 created: 2026-06-30
 difficulty: intermediate
-updated: 2026-06-30
+updated: 2026-10-21
 ---
 
 # 🧠 Topic: Content Delivery Network (CDN)

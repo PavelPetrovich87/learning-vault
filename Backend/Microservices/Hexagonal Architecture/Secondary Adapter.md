@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [hexagonal-architecture, secondary-adapter, driven-adapter, ports-and-adapters, backend]
 source: Hexagonal Architecture / Ports and Adapters
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

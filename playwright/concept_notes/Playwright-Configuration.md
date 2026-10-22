@@ -1,9 +1,9 @@
 ---
-status: analyzing
+status: archived
 tags: [playwright, testing, e2e, configuration]
 source: https://playwright.dev/docs/test-configuration
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-10-21
 difficulty: intermediate
 ---
 
@@ -142,7 +142,7 @@ projects: [
 ## 🔗 Deep Connections
 
 - **Parent Topic:** [[Playwright-Overview]] (create when ready)
-- **Related Concepts:** [[GitHub Actions — Workflow файлы и CI-CD архитектура]], [[Chromatic — Визуальная регрессия и CI-CD flow]], [[Bootcamp — GitHub Actions + Chromatic]]
+- **Related Concepts:** [[Playwright Browser Context]] (`storageState` and `projects` are built on top of contexts — see how to create and seed them), [[GitHub Actions — Workflow файлы и CI-CD архитектура]], [[Chromatic — Визуальная регрессия и CI-CD flow]], [[Bootcamp — GitHub Actions + Chromatic]]
 - **Prerequisites:** Basic TypeScript, understanding of async/await, familiarity with end-to-end testing goals.
 
 ## ❓ Active Recall Questions

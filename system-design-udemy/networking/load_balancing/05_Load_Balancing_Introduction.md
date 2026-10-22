@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [system-design, udemy, networking, load-balancing, scalability, availability, research]
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-10-21
 ---
 
 # 05_Load_Balancing_Introduction

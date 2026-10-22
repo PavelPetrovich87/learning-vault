@@ -1,4 +1,5 @@
 ---
+status: stable
 title: NestJS Modules
 date: 2026-06-23
 tags:
@@ -8,6 +9,7 @@ tags:
   - architecture
   - learning
 source: NestJS tutorial — modules and dependency injection
+updated: 2026-10-21
 ---
 
 ## What is a Module in NestJS?

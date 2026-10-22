@@ -1,0 +1,64 @@
+<mxfile type="device">
+  <diagram id="two-forms" name="Две формы убеждения">
+    <mxGraphModel dx="1000" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="top" value="&lt;b&gt;Фраза-убеждение&lt;/b&gt;&lt;br&gt;две лингвистические формы · гл. 6, с. 113–115" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="320" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="hdrCeq" value="&lt;b&gt;Комплексный эквивалент (CEq)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="360" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="hdrCE" value="&lt;b&gt;Причинно-следственная связь (C-E)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="440" y="160" width="380" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1" value="Формула" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="800" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1ceq" value="&lt;b&gt;А = Б&lt;/b&gt; · «А означает Б»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="l1">
+          <mxGeometry x="20" y="40" width="360" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1ce" value="&lt;b&gt;А является причиной Б&lt;/b&gt; · «А вызывает Б»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="l1">
+          <mxGeometry x="400" y="40" width="380" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2" value="Маркер" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="800" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2ceq" value="значит · означает · подразумевает" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="l2">
+          <mxGeometry x="20" y="40" width="360" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2ce" value="вызывать · делать · вынуждать · приводить к · иметь результатом" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="l2">
+          <mxGeometry x="400" y="40" width="380" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2note" value="Маркер может отсутствовать — связка скрытая, подразумевается (с. 114–116):&lt;br&gt;«Его здоровье никуда не годится, он, должно быть, уже ненавидит самого себя» — CEq без связующего слова" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="l2">
+          <mxGeometry x="20" y="105" width="760" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3" value="Функция" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="590" width="800" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3ceq" value="сформулировать ценность; установить, что ситуация соответствует ей или противоречит" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="l3">
+          <mxGeometry x="20" y="40" width="360" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3ce" value="определить причины и следствия ценности" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="l3">
+          <mxGeometry x="400" y="40" width="380" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4" value="Суть" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="730" width="800" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4ceq" value="связка-тождество: А и Б объявлены одним переживанием. „Определение“, а не „процедура обоснования“ (с. 114)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="l4">
+          <mxGeometry x="20" y="40" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4ce" value="связка-влияние: А производит Б, но механизм не показан — неопределённый глагол, звенья цепочки опущены (с. 115–116)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="l4">
+          <mxGeometry x="400" y="40" width="380" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="top" target="hdrCeq">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="top" target="hdrCE">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

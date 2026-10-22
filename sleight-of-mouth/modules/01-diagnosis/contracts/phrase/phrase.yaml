@@ -1,0 +1,12 @@
+id: contract-phrase
+module: 01-diagnosis
+direction: input
+data-type: фраза
+produced-by: внешний мир
+consumed-by:
+  - 01-diagnosis/b1-parse
+type: string
+encoding: utf-8
+trim: true
+min-length: 1
+max-length: 1000

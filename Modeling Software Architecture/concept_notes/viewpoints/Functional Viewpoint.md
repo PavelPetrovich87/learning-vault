@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [c4-model, architecture, viewpoint, functional, use-cases, udemy, fundamentals]
 created: 2026-07-10
-updated: 2026-07-10
+updated: 2026-10-21
 difficulty: beginner
 ---
 

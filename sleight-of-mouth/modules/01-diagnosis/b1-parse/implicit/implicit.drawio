@@ -1,0 +1,79 @@
+<mxfile type="device">
+  <diagram id="implicit" name="Проба скрытой связки (b1)">
+    <mxGraphModel dx="1000" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="in" value="&lt;b&gt;утверждение без явного маркера&lt;/b&gt;&lt;br&gt;после шага 2 разбора (связка не найдена)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="310" y="40" width="280" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n1" value="&lt;b&gt;1 · ПОИСК ПРИЗНАКОВ&lt;/b&gt;&lt;br&gt;пять видов признаков; каждый указывает предполагаемое место разреза — где фраза делится на два звена&lt;br&gt;&lt;i&gt;„мне опасно проявлять свои эмоции“ → тема | оценка&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="310" y="150" width="280" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="&lt;b&gt;2 · ПРОБА ПОДСТАНОВКОЙ&lt;/b&gt;&lt;br&gt;в место разреза подставляется слово-связка: сначала «вызывает» (C-E, приоритет), затем «значит» (CEq)&lt;br&gt;&lt;i&gt;„проявление эмоций вызывает опасность“&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="310" y="300" width="280" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="&lt;b&gt;3 · ПРОВЕРКА СМЫСЛА&lt;/b&gt;&lt;br&gt;фраза с подставленным словом означает то же,&lt;br&gt;что имел в виду говорящий?&lt;br&gt;(проверка семантическая, не механическая)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="310" y="450" width="280" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="tFound" value="&lt;b&gt;СВЯЗКА НАЙДЕНА: тип + место разреза&lt;/b&gt;&lt;br&gt;результат для шага 4 «Разделение на составляющие»;&lt;br&gt;карта заполняется там — у пробы нет своего артефакта" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="310" y="590" width="280" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="ann1" value="источник подстановок — вопросы книги (с. 125):&lt;br&gt;«вызывает» ↔ „что заставляет?“&lt;br&gt;«значит» ↔ „что значит?“" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="loop" value="&lt;b&gt;СЛЕДУЮЩЕЕ МЕСТО РАЗРЕЗА&lt;/b&gt;&lt;br&gt;перебор слева направо —&lt;br&gt;фиксируется первый успешный" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="450" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="tImp" value="&lt;b&gt;СВЯЗКА НЕ НАЙДЕНА&lt;/b&gt;&lt;br&gt;артефакт: тип = неполное; A — фрагмент-обобщение, B пусто;&lt;br&gt;раскрытие — в b3-экспликации" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="40" y="600" width="200" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="signs" value="Признаки — где искать место разреза" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="150" width="210" height="410" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1" value="&lt;b&gt;каузативный глагол&lt;/b&gt;&lt;br&gt;„власть развращает“ —&lt;br&gt;разрез вокруг глагола" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=11;" vertex="1" parent="signs">
+          <mxGeometry x="20" y="40" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="&lt;b&gt;пассивная каузация&lt;/b&gt;&lt;br&gt;„успех дается тяжелым трудом“ —&lt;br&gt;разрез по «даётся»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=11;" vertex="1" parent="signs">
+          <mxGeometry x="20" y="110" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="&lt;b&gt;оборот «кроется»&lt;/b&gt;&lt;br&gt;„за любым поведением кроется позитивное намерение“" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=11;" vertex="1" parent="signs">
+          <mxGeometry x="20" y="180" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="s4" value="&lt;b&gt;соположение&lt;/b&gt;&lt;br&gt;две клаузы рядом —&lt;br&gt;разрез между ними" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=11;" vertex="1" parent="signs">
+          <mxGeometry x="20" y="250" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="s5" value="&lt;b&gt;скрытая оценка&lt;/b&gt;&lt;br&gt;„мне опасно…“ —&lt;br&gt;разрез между темой и оценкой" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=11;" vertex="1" parent="signs">
+          <mxGeometry x="20" y="320" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="in" target="n1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="n1" target="n2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="n2" target="n3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eDa" value="да" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="n3" target="tFound">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eNet" value="нет" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="n3" target="loop">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eBack" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=0;entryX=0;entryY=0.75;" edge="1" parent="1" source="loop" target="n2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eDone" value="мест больше нет" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="loop" target="tImp">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ea1" value="" style="rounded=1;html=1;dashed=1;endArrow=none;strokeColor=#999999;exitX=1;exitY=0.5;entryX=0;entryY=0.25;" edge="1" parent="1" source="ann1" target="n2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ea2" value="" style="rounded=1;html=1;dashed=1;endArrow=none;strokeColor=#999999;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="signs" target="n1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

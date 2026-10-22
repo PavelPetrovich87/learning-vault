@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 2 — среды" id="ex-6-env-apis">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 2 (средний): server-only данные в entities/video → index.server.ts (Next.js App Router)" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (видеоплатформа)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Next.js App Router. Слайс entities/video содержит:&#xa;&#xa;• модель и вид (нужны и серверу, и клиенту);&#xa;• getVideoForSSR — прямой доступ к БД с import &quot;server-only&quot;.&#xa;&#xa;Клиентский компонент импортирует «@/entities/video» — сборка падает: server-only попал в клиентский граф модулей." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон: ветка Б (среды)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. «Keep index.ts free of server-only exports … those exports can enter the client module graph and cause build errors» — граница реальна, не выдумана" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. «Split only when this boundary is required» — не плодим точки входа: обычные экспорты остаются в index.ts, server-only уезжает" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="200" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. index.server.ts — точка входа для серверных потребителей (Server Components, data layer); правило 4-2 (только через публичный API) сохраняется для обеих сред" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11.5;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/entities/video/&#xa;├── model/&#xa;│   └── video.ts              ← тип + правила&#xa;├── ui/&#xa;│   └── VideoCard.tsx&#xa;├── api/&#xa;│   └── get-video-for-ssr.ts  ← import &quot;server-only&quot;&#xa;├── index.ts                  ← чисто: без server-only&#xa;└── index.server.ts            ← server-точка входа" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// entities/video/index.ts — для всех&#xa;export { type Video } from &quot;./model/video&quot;;&#xa;export { VideoCard } from &quot;./ui/VideoCard&quot;;&#xa;&#xa;// entities/video/index.server.ts — только сервер&#xa;export { getVideoForSSR } from &quot;./api/get-video-for-ssr&quot;;&#xa;&#xa;// app/watch/page.tsx (Server Component):&#xa;import { getVideoForSSR } from &quot;@/entities/video/index.server&quot;;&#xa;&#xa;// pages/watch/ui/WatchPage.tsx (Client):&#xa;import { VideoCard } from &quot;@/entities/video&quot;;   // чисто ✓" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="340" width="420" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Чего НЕ делать&#xa;&#xa;❌ Держать server-only в index.ts «потому что удобно» — клиентский граф ломается.&#xa;❌ Заводить index.server.ts «на всякий случай» — «ad-hoc variations are not recommended» (SKILL.md §4-2): точка входа добавляется, когда рантайм-граница реально требует.&#xa;❌ Глубокий импорт «@/entities/video/api/get-video-for-ssr» в обход точки входа — нарушение правила 4-2 для любой среды." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11.5;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="700" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: index.server.ts для server-only, index.ts остаётся универсальным. Сред-специфичные точки входа — исключение под реальную рантайм-границу, не второй стиль работы." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="700" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

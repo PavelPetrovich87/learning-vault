@@ -1,8 +1,8 @@
 ---
-status: researching
+status: archived
 tags: [system-design, udemy, research, networking, tcp, udp]
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-10-21
 ---
 
 # 01 TCP and UDP

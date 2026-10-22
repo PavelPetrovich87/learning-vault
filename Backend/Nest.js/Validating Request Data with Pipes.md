@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [nest-js, pipes, validation, decorators, dto]
 source: https://docs.nestjs.com/pipes
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [api-design, rest, backend, system-design, http]
 source: 
 created: 2026-06-22
-updated: 2026-06-23
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

@@ -1,0 +1,173 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="algo-map" name="Карта алгоритма"><mxGraphModel dx="1422" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="mon" value="⏱ Мониторинг — после запуска&lt;br&gt;сверяет с теми же цифрами (тема 6.1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="230" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ref" value="📚 СПРАВОЧНИК · read-only&lt;br&gt;порядки: RAM · SSD · сеть · объёмы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="40" width="240" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="frame" value="РАМКА · read-only — окружение · поля 1–7" style="swimlane;html=1;startSize=28;fillColor=#f5faf5;strokeColor=#82b366;pointerEvents=0;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="140" width="1300" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="f1" value="&lt;b&gt;1 · ЦЕЛИ И ГОРИЗОНТ&lt;/b&gt;&lt;br&gt;бизнес-цель · срок · темп роста&lt;br&gt;«1 млн DAU через год; рост ×2/год»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="frame">
+          <mxGeometry x="20" y="45" width="300" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="f2" value="&lt;b&gt;2 · ФТ: ДЕЛАЕМ / НЕ ДЕЛАЕМ&lt;/b&gt;&lt;br&gt;делаем: «ищет товар по названию»&lt;br&gt;не делаем: «групповых чатов нет»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="frame">
+          <mxGeometry x="340" y="45" width="300" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="f3" value="&lt;b&gt;3 · НФТ С ЧИСЛАМИ&lt;/b&gt;&lt;br&gt;свойства с числами · ось поставляемости&lt;br&gt;«p95 ≤ X при параметрах нагрузки»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="frame">
+          <mxGeometry x="660" y="45" width="300" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="f4" value="&lt;b&gt;4 · ПАРАМЕТРЫ НАГРУЗКИ&lt;/b&gt;&lt;br&gt;действий/день · λ средняя/пиковая · объём/год&lt;br&gt;владелец · предположение · вычислимо" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="frame">
+          <mxGeometry x="980" y="45" width="300" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="f5" value="&lt;b&gt;5 · ОГРАНИЧЕНИЯ&lt;/b&gt;&lt;br&gt;бюджет · команда · сроки · легальность&lt;br&gt;чувствительность ×2/÷2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="frame">
+          <mxGeometry x="20" y="130" width="300" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="f6" value="&lt;b&gt;6 · СЦЕНАРИИ (6)&lt;/b&gt;&lt;br&gt;3 проектирующих · 3 проверочных&lt;br&gt;каждый со своей λ или честное TBD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="frame">
+          <mxGeometry x="340" y="130" width="300" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="f7" value="&lt;b&gt;7 · ШКАЛА ПОСЛЕДСТВИЙ&lt;/b&gt;&lt;br&gt;порядок классов по необратимости:&lt;br&gt;«что для нас необратимо?»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="frame">
+          <mxGeometry x="660" y="130" width="300" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="model" value="МОДЕЛЬ · read-write — состояние" style="swimlane;html=1;startSize=28;fillColor=#f5faf5;strokeColor=#82b366;pointerEvents=0;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1300" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="m1" value="&lt;b&gt;СОСТАВ&lt;/b&gt; — первичное&lt;br&gt;роли + связи,&lt;br&gt;технологически стерилен" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="model">
+          <mxGeometry x="20" y="45" width="220" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="m2" value="&lt;b&gt;ОЦЕНЩИК&lt;/b&gt;&lt;br&gt;примерные расчёты ·&lt;br&gt;расчёт · прогон" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="model">
+          <mxGeometry x="260" y="45" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="m3" value="&lt;b&gt;РЕЕСТР БОЛЕЙ&lt;/b&gt; · очередь по серьёзности&lt;br&gt;требования × сценарии × состав&lt;br&gt;руками не правится" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="model">
+          <mxGeometry x="490" y="45" width="250" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="m4" value="&lt;b&gt;Производные&lt;/b&gt;&lt;br&gt;нагрузка на роли · бюджеты ·&lt;br&gt;ёмкость · цены кандидатов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="model">
+          <mxGeometry x="760" y="45" width="250" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="m5" value="&lt;b&gt;РЕЕСТР ВОПРОСОВ&lt;/b&gt; → наружу&lt;br&gt;число · владелец ·&lt;br&gt;развилка · подстановка" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="model">
+          <mxGeometry x="1030" y="45" width="250" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="mm1" value="модификация → пересчёт" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="model" source="m1" target="m2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mm2" value="пишет" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="model" source="m2" target="m3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mm3" value="нет входа · чувствительное" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="model" source="m2" target="m5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="cycle" value="ЦИКЛ · шаги (модификация состава — только шаг 1)" style="swimlane;html=1;startSize=28;fillColor=#ffffff;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="630" width="1300" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1" value="&lt;b&gt;1 · СОСТАВ [РОЛЬ]&lt;/b&gt;&lt;br&gt;вход: кластер из очереди болей&lt;br&gt;выход: цепочка минимальных ролей&lt;br&gt;стоп: реестр пуст · kill-test" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="cycle">
+          <mxGeometry x="20" y="45" width="190" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="&lt;b&gt;2 · БЮДЖЕТЫ РОЛЕЙ&lt;/b&gt;&lt;br&gt;вход: SLO рамки + состав&lt;br&gt;выход: бюджеты · нагрузка · ёмкость&lt;br&gt;не влезает → шаг 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="cycle">
+          <mxGeometry x="230" y="45" width="190" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="&lt;b&gt;3 · КАНДИДАТЫ [КЛАСС]&lt;/b&gt;&lt;br&gt;классы, применимые&lt;br&gt;к паттернам роли" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="cycle">
+          <mxGeometry x="420" y="45" width="170" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="s4" value="&lt;b&gt;4 · ПРОФИЛИ&lt;/b&gt;&lt;br&gt;даёт · стоит · ломает&lt;br&gt;+ линзы SAM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="cycle">
+          <mxGeometry x="610" y="45" width="170" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="s5" value="&lt;b&gt;5 · ВЫБОР [ПРОДУКТ]&lt;/b&gt;&lt;br&gt;пакетно, из проходящих —&lt;br&gt;простейшее" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="cycle">
+          <mxGeometry x="800" y="45" width="170" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="s6" value="&lt;b&gt;6 · ИСПЫТАНИЕ&lt;/b&gt;&lt;br&gt;решение → число → отказ,&lt;br&gt;проверочные сценарии" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="cycle">
+          <mxGeometry x="990" y="45" width="170" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="sign" value="🏷 ПОДПИСЬ СОСТАВА — первый полный проход 1→6 без возвратов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" vertex="1" parent="cycle">
+          <mxGeometry x="420" y="205" width="520" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;" edge="1" parent="cycle" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;" edge="1" parent="cycle" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;" edge="1" parent="cycle" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;" edge="1" parent="cycle" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;" edge="1" parent="cycle" source="s5" target="s6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r1" value="не влезает" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="cycle" source="s2" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r2" value="пустое множество" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="cycle" source="s3" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r3" value="провал" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="cycle" source="s6" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="cs" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;dashed=1;" edge="1" parent="cycle" source="s6" target="sign">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="human" value="&lt;b&gt;👤 ПРОЕКТИРОВЩИК&lt;/b&gt; — роль, не модуль&lt;br&gt;исполняет шаги · переговорщик с владельцами чисел" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="970" width="300" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="lg1" value="🟩 согласовано" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="440" y="985" width="170" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="lg2" value="🟨 гриллинг сейчас (пауза; следующий — шаг 3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="630" y="985" width="250" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="lg3" value="⬜ ещё не обсуждали (шаги 3–6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="985" width="210" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="emon" value="петля во времени" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="mon" target="frame">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eref" value="порядки для расчётов" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="ref" target="m2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eread" value="чтение: боль · фильтр · валюта" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="frame" target="cycle">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="etrade" value="торг / уточнение — через владельца" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="cycle" target="frame">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eraw" value="требования × сценарии" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="frame" target="m2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="emut" value="модификация — через боль" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s1" target="m1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="equeue" value="очередь болей" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="m3" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="em4" value="пишут шаги 2–4 · читают 5–6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="m4" target="cycle">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eout" value="вопросы наружу" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="m5" target="human">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eexec" value="исполняет шаги" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="human" target="cycle">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eupd" value="уточнение · торг" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="human" target="frame">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="zr" value="⬜ ЗАПОЛНЕНИЕ РАМКИ · опрос&lt;br&gt;анкета · детекторы · щупы · протокол опроса&lt;br&gt;подробно — заполнение-рамки.drawio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="30" width="300" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="ezr_frame" value="поля 1–5 · запись — только владелец" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="zr" target="frame">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ezr_exec" value="исполняет опрос" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="human" target="zr">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ezr_ref" value="порядки для кандидатов" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;" edge="1" parent="1" source="ref" target="zr">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel></diagram>
+</mxfile>

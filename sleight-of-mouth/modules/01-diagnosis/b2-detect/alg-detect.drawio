@@ -1,0 +1,67 @@
+<mxfile type="device">
+  <diagram id="alg-detect" name="Алгоритм детекции (шаги 1–4)">
+    <mxGraphModel dx="1000" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="980" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="&lt;b&gt;Алгоритм детекции (b2)&lt;/b&gt; — блок-схема, шаги 1–4. Материал: гл. 1, 5, 6, 8." style="text;html=1;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="900" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="nIn" value="&lt;b&gt;Вход&lt;/b&gt; — карта после b1:&lt;br&gt;тип · фраза · звенья A и B;&lt;br&gt;мишени I–V исходно «—»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="60" width="340" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="nIn" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1" value="&lt;b&gt;Шаг 1 · Материал — что читаем&lt;/b&gt;&lt;br&gt;① звенья A и B — слова общности («все», «никогда») и оценки сохранены нормализацией;&lt;br&gt;② фраза целиком — скрепки частей, при разрезе в звенья не попадающие (прежде всего «но»);&lt;br&gt;③ тип — ключ чтения: мишень I = звено A, мишень II = звено B&lt;br&gt;(C-E: причина и следствие; CEq: термин и определение)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="220" y="190" width="460" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="&lt;b&gt;Шаг 2 · Поиск по словарю маркеров&lt;/b&gt;&lt;br&gt;Пройти словарь целиком. Строка найдена,&lt;br&gt;только если маркер реально стоит в материале карты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="220" y="370" width="460" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="dict" value="&lt;b&gt;Словарь маркеров&lt;/b&gt; (канон §4 → формулировки книги)&lt;br&gt;&lt;br&gt;1. универсальные суждения («все», «никогда»…) → II · гл. 6, с. 134&lt;br&gt;2. «цена цели» («получу — потеряю») → II · с. 136&lt;br&gt;3. ярлык идентификации («Я — неудачник») → III · гл. 5, с. 94–95&lt;br&gt;4. обесценивающее «но» → IV · гл. 1, с. 24–26&lt;br&gt;5. один эпизод = вся жизнь → IV · с. 137, 139&lt;br&gt;6. «представлено как „факт“» → IV · гл. 8, с. 167&lt;br&gt;7. убеждение об убеждении → V · с. 184–185" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="240" width="220" height="330" as="geometry"/>
+        </mxCell>
+        <mxCell id="eDict" value="справочник" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#d6b656;fontSize=10;endArrow=none;" edge="1" parent="1" source="s2" target="dict">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s2" target="d">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="d" value="находки есть?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="320" y="500" width="260" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="eYes" value="да" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;" edge="1" parent="1" source="d" target="s3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="&lt;b&gt;Шаг 3 · Отметка&lt;/b&gt;&lt;br&gt;Каждая находка → &lt;b&gt;▲&lt;/b&gt; у своей мишени.&lt;br&gt;Правила: несколько находок на одну мишень — одна ▲;&lt;br&gt;каждая ▲ обеспечена находкой;&lt;br&gt;тип и звенья не пересматриваются (работа b1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="220" y="660" width="460" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="eNo" value="нет — ноль находок,&lt;br&gt;законный результат" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="d" target="s4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="s4" value="&lt;b&gt;Шаг 4 · Выход — карта с мишенями&lt;/b&gt;&lt;br&gt;Все пять полей заполнены: «—» или «▲».&lt;br&gt;Мишень I после b2 всегда «—» (решение 2026-09-05):&lt;br&gt;b2 маркирует II–V; I — потенциальная, её поднимает b3.&lt;br&gt;«—» = во фразе признака нет, не «мишень неуязвима»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="220" y="840" width="460" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="Даже без ▲ карта идёт дальше: невысказанные допущения «далеко не всегда просматриваются в поверхностной структуре» (гл. 8, с. 168) — их выявляют вопросы" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="840" width="220" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" edge="1" parent="1" source="s4" target="nOut">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="nOut" value="&lt;b&gt;Дальше — b3-экспликация&lt;/b&gt;: подтверждение ▲ → ▲▲,&lt;br&gt;поднятие основания (мишень I), раскрытие неполных" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1020" width="340" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="eNote" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#666666;endArrow=none;" edge="1" parent="1" source="note" target="nOut">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

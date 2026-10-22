@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e" modified="2026-08-05T18:00:00.000Z" agent="fullstack-agentic-trainer" version="22.0.0" type="device">
+  <diagram name="Reactor pattern" id="reactor-pattern">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="app" value="Application code" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dm" value="Event Demultiplexer&#xa;epoll / kqueue / IOCP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="320" y="200" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eq" value="Event Queue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="120" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="el" value="Event Loop" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="220" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h" value="Handler (callback)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="320" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="1. submit request + handler (non-blocking)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;fontSize=10" edge="1" parent="1" source="app" target="dm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="2. push events" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82b366;fontSize=10" edge="1" parent="1" source="dm" target="eq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="3. iterate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#d6b656;fontSize=10" edge="1" parent="1" source="eq" target="el">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="4. dispatch event" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#d6b656;fontSize=10" edge="1" parent="1" source="el" target="h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5a" value="5a. return control" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#b85450;dashed=1;fontSize=10" edge="1" parent="1" source="h" target="el">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5b" value="5b. new async op" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#b85450;dashed=1;fontSize=10" edge="1" parent="1" source="h" target="dm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="6. block until next event" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82b366;dashed=1;fontSize=10" edge="1" parent="1" source="el" target="dm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="&lt;b&gt;Reactor pattern (по [НД] Fig 1.3)&lt;/b&gt;" style="text;html=1;align=center;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="350" y="40" width="400" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

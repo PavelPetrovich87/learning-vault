@@ -1,4 +1,5 @@
 ---
+status: stable
 title: NestJS TypeScript Configuration
 date: 2026-06-23
 tags:
@@ -8,6 +9,7 @@ tags:
   - configuration
   - learning
 source: NestJS tutorial — educational reference
+updated: 2026-10-21
 ---
 
 ## Why `tsconfig.json` matters

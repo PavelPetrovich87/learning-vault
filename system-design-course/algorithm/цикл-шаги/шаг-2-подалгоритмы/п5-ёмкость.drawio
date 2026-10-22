@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" agent="zcode" version="24.7.7">
+  <diagram id="sub5-capacity" name="П5 Ёмкость">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="560" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="lane1" value="ОТКУДА" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="280" height="460" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1" value="λ на роль (из П2):&lt;br&gt;роль · сценарий" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="50" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="Фазы (из П3 / справочник):&lt;br&gt;своя фаза +&lt;br&gt;ожидания подчинённых" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="160" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane2" value="КАК" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="340" height="460" as="geometry"/>
+        </mxCell>
+        <mxCell id="op1" value="W = время слота:&lt;br&gt;воркер держит слот и пока ждёт&lt;br&gt;подчинённую роль →&lt;br&gt;W = своя фаза + ожидания" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="50" width="280" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="op2" value="Слоты = λ × W ÷ 0.75&lt;br&gt;(план при загрузке ≤ 70–80 % —&lt;br&gt;у порога взрывается хвост)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="190" width="280" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="op3" value="Разложить слоты по копиям:&lt;br&gt;сколько копий реально нужно&lt;br&gt;(18 × 0.01 ÷ 0.75 &lt; 1 на копию → ×2 ✓;&lt;br&gt;7 × 0.35 ÷ 0.75 ≈ 4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="lane2">
+          <mxGeometry x="30" y="320" width="280" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane3" value="КУДА" style="swimlane;html=1;startSize=30;fillColor=#fafafa;strokeColor=#999999;pointerEvents=0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="40" width="300" height="460" as="geometry"/>
+        </mxCell>
+        <mxCell id="d1" value="ёмкость (слоты на роль) —&lt;br&gt;кратность шага 1 подтверждена числом&lt;br&gt;или запрошена новая (через боль)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane3">
+          <mxGeometry x="20" y="100" width="260" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s1" target="op2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="s2" target="op1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op1" target="op2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op2" target="op3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=10;strokeColor=#666666;" edge="1" parent="1" source="op3" target="d1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

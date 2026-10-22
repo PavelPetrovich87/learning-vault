@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 mastery: beginner
 tags: [chromatic, visual-regression, ci-cd, storybook, testing, fsd-shopping-cart]
 source: Обсуждение в рамках проекта fsd-shopping-cart
 created: 2026-05-14
-updated: 2026-07-03
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

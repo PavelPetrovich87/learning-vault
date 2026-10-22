@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 2 — карточка товара" id="ex-3-product-card">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 2 (средний): одинаковая карточка товара в трёх местах → entities/product/ui" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (магазин)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Карточка товара нужна в каталоге, в поиске и в списке «похожие» на странице товара.&#xa;&#xa;В отличие от уровня 2: вид действительно ОДИН — дизайн-система, меняется синхронно; различия (сниппет запроса, компактный режим) — мелкие и решаются пропсами. Сущность product уже существует (правило is-on-sale)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Extraction rule: ① три потребителя сейчас ② причина меняться — дизайн-система продукта, не страницы ③ ответственность — «вид товара» → держится" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Глава §3.2: «его главная цель: переиспользовать один и тот же вид в нескольких страницах, а разная бизнес-логика может подключаться через пропсы или слоты» → ui сущности" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="205" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Оговорка скилла (§6): «Be cautious adding UI to entities … only import them from higher layers, never from other entities» — карточка не импортирует другие сущности напрямую; данные приходят пропсами" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="330" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/entities/product/&#xa;├── model/&#xa;│   └── is-on-sale.ts&#xa;├── ui/&#xa;│   └── ProductCard.tsx    ← вид сущности&#xa;└── index.ts&#xa;&#xa;src/pages/&#xa;├── catalog/ui/CatalogGrid.tsx   ┐&#xa;├── search/ui/SearchPage.tsx     ├ импортируют&#xa;└── product/ui/SimilarList.tsx    ┘ «@/entities/product»" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// entities/product/ui/ProductCard.tsx&#xa;import { isOnSale } from &quot;../model/is-on-sale&quot;;&#xa;import { type ProductDTO } from &quot;@/shared/api/product&quot;;&#xa;&#xa;type Props = {&#xa;  product: ProductDTO;&#xa;  compact?: boolean;            // «похожие» — компактный режим&#xa;  highlight?: string;           // поиск — что подсветить&#xa;  onAdd?: () =&gt; void;           // слот действия (фича — уровень 4)&#xa;};&#xa;&#xa;export const ProductCard = ({ product, compact, highlight, onAdd }: Props) =&gt; (&#xa;  &lt;article className={compact ? &quot;card card--compact&quot; : &quot;card&quot;}&gt;&#xa;    {isOnSale(product) &amp;&amp; &lt;span className=&quot;card__sale&quot;&gt;на скидке&lt;/span&gt;}&#xa;    &lt;Highlight text={product.title} query={highlight} /&gt;&#xa;    {onAdd &amp;&amp; &lt;Button onClick={onAdd}&gt;В корзину&lt;/Button&gt;}&#xa;  &lt;/article&gt;&#xa;);" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="370" width="420" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Чем этот случай отличается от «копий» уровня 2?&#xa;&#xa;Там карточки дрейфовали по своим причинам (превью-баннер vs сниппет). Здесь вид один и обязан меняться синхронно — дизайн-система. Различия мелкие и параметризуются пропсами. Это и есть «разная бизнес-логика через пропсы или слоты» из главы." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="700" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: entities/product/ui — вид сущности, импортируется только слоями выше. Кнопка «В корзину» сюда не пишется: действие — слот (onAdd), его реализует фича уровня 4." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="700" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

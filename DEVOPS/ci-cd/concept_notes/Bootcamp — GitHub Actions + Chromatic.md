@@ -1,8 +1,9 @@
 ---
+status: archived
 date: 2026-05-14
 type: course
 created: 2026-05-14
-updated: 2026-07-03
+updated: 2026-10-21
 tags: [github-actions, chromatic, ci-cd, storybook, course, fsd-shopping-cart]
 source: На основе концепт-ноутов "Chromatic — Визуальная регрессия" и "GitHub Actions — Workflow файлы"
 difficulty: intermediate

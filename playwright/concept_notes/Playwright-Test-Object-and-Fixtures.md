@@ -1,9 +1,9 @@
 ---
-status: analyzing
+status: archived
 tags: [playwright, testing, e2e, fixtures]
 source: https://playwright.dev/docs/test-fixtures
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-10-21
 difficulty: intermediate
 ---
 
@@ -181,7 +181,7 @@ export const test = base.extend<{ _cleanup: void }>({
 ## 🔗 Deep Connections
 
 - **Parent Topic:** [[Playwright-Configuration]]
-- **Related Concepts:** [[Playwright-CLI-Commands]], [[Page Object Model]] (create when ready)
+- **Related Concepts:** [[Playwright-CLI-Commands]], [[Playwright Browser Context]] (the full `Browser` → `BrowserContext` → `Page` hierarchy, popups, multi-tab scenarios), [[Page Object Model]] (create when ready)
 - **Prerequisites:** Understanding of async/await, basic Playwright test structure.
 
 ## ❓ Active Recall Questions
@@ -201,4 +201,5 @@ export const test = base.extend<{ _cleanup: void }>({
 
 - [[Playwright-Configuration]]
 - [[Playwright-CLI-Commands]]
+- [[Playwright Browser Context]]
 - [[GitHub Actions — Workflow файлы и CI-CD архитектура]]

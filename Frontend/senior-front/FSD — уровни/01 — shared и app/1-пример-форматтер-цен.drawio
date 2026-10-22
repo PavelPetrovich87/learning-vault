@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 2 — форматтер цен" id="ex-1-format-price">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 2 (средний): «12 990 ₽» и «3 товара» → shared/lib" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Магазин. На карточке товара, в корзине и в чекауте нужны:&#xa;&#xa;• цена «12 990 ₽»&#xa;• склонение «3 товара / 1 товар / 2 товара»&#xa;&#xa;Чистые функции над примитивами. Никаких правил продукта: формат вывода — не скидка и не наличие." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Шаг 2: утилиты без бизнес-логики — «Utility functions → shared/lib/» (SKILL.md §2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Правило 4-4 (доменные имена): «Name files after what they are for» — format-price.ts и plural.ts, не utils.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="190" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Глава 1.2 §3.2: lib — «не helpers и не utilities»: каждая библиотека — одна область ответственности (даты, деньги, склонения)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/shared/&#xa;└── lib/&#xa;    ├── format-price.ts   ← деньги&#xa;    ├── plural.ts         ← склонения&#xa;    └── index.ts" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// shared/lib/format-price.ts&#xa;export const formatPrice = (kopecks: number): string =&gt;&#xa;  new Intl.NumberFormat(&quot;ru-RU&quot;, {&#xa;    style: &quot;currency&quot;,&#xa;    currency: &quot;RUB&quot;,&#xa;    maximumFractionDigits: 0,&#xa;  }).format(kopecks / 100);&#xa;&#xa;// shared/lib/plural.ts&#xa;export const plural = (&#xa;  n: number, one: string, few: string, many: string,&#xa;): string =&gt; {&#xa;  const mod10 = n % 10, mod100 = n % 100;&#xa;  if (mod10 === 1 &amp;&amp; mod100 !== 11) return one;&#xa;  if (mod10 &gt;= 2 &amp;&amp; mod10 &lt;= 4 &amp;&amp; (mod100 &lt; 12 || mod100 &gt; 14))&#xa;    return few;&#xa;  return many;&#xa;};" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="250" width="420" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="anti" value="Анти-пример (правило 4-4 скилла + глава §3.2):&#xa;&#xa;❌ shared/lib/utils.ts — ящик, где рядом живут formatPrice + plural + debounce + sleep, вход через общий index.&#xa;&#xa;// BAD: technical-role naming&#xa;model/types.ts   ← какие типы? User? Order? вперемешку&#xa;model/utils.ts&#xa;&#xa;«Technical-role names … mix unrelated concerns in a single file and reduce cohesion.» — SKILL.md §4-4" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11.5;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="700" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: shared/lib, файлы с доменными именами. Формат вывода — инфраструктура отображения, не правило продукта; правило «одна область ответственности» держит lib от превращения в utils-помойку." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="770" y="650" width="470" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

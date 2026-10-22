@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 2 — @x order-user" id="ex-5-x-order-user">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 2 (средний): entities/order нужен тип User → сначала слияние, потом @x" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (магазин)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Сущности order и user уже существуют (уровень 3).&#xa;&#xa;order-summary показывает имя покупателя: модели order нужен тип/функция из user.&#xa;&#xa;Обе сущности — самостоятельные домены, сливать их целиком не хочется." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон: ветка ENTITIES decision flow" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. ① Один цельный домен? Нет: пользователь и заказ живут в разных контекстах (профиль vs оформление)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. ② Композиция выше? Сводку заказа собирает страница чекаута — но имени покупателя не видать без связи данных; ③ общее — не нейтральная инфраструктура" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="180" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. ④ Границы отдельны, зависимость настоящая → @x. Direction rule: в user/@x/order — user ПРОИЗВОДИТ, order ПОТРЕБЛЯЕТ. Минимальная поверхность: только имя" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="290" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/entities/&#xa;├── user/&#xa;│   ├── @x/&#xa;│   │   └── order.ts        ← PUBLIC API&#xa;│   │                         только для order&#xa;│   ├── model/user.ts&#xa;│   └── index.ts&#xa;└── order/&#xa;    ├── model/&#xa;    │   └── order-summary.ts  ← импортирует&#xa;    │                         user/@x/order&#xa;    └── index.ts" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// entities/user/@x/order.ts — экспортируем ТОЛЬКО нужное&#xa;export { getUserDisplayName } from &quot;../model/user&quot;;&#xa;// почему не слияние: пользователь и заказ — отдельные контексты;&#xa;// пересматривать, если @x между ними размножится&#xa;&#xa;// entities/order/model/order-summary.ts&#xa;import { getUserDisplayName } from &quot;@/entities/user/@x/order&quot;;&#xa;&#xa;export const orderSummary = (o: Order, u: User): string =&gt;&#xa;  `${o.number} — ${getUserDisplayName(u)}`;&#xa;&#xa;// карта: user →(x)→ order: фиолетовый пунктир, один, задокументирован" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="370" width="420" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Анти-паттерны рядом&#xa;&#xa;❌ @x в features — «The @x notation is for the entities layer only»; фичам — стратегии A–D&#xa;❌ Несколько @x между одной парой — «the boundaries are probably wrong. Merge them»&#xa;❌ Цепочка order → order-item → order-customer-info через @x — сигнал одного домена order-info (excessive-entities)&#xa;&#xa;Визуализатор: ошибка №3 (6.4) — двунаправленный импорт; фикс 6.5 — ровно этот паттерн" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=11.5;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="700" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: user/@x/order.ts — последняя из четырёх опций, выбранная явно и с комментарием. Поверхность — одна функция; направление — producer/@x/consumer; ревизия — в календаре команды." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="660" width="700" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

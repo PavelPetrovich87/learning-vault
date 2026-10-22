@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 tags: [system-design, networking, ip-addresses]
 source: Udemy System Design Course
 created: 2026-06-27
 difficulty: beginner
-updated: 2026-06-27
+updated: 2026-10-21
 ---
 
 # 🧠 Topic: IP Addresses

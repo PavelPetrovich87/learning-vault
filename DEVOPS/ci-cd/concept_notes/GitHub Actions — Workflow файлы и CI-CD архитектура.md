@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 mastery: beginner
 tags: [github-actions, ci-cd, devops, automation, fsd-shopping-cart]
 source: Обсуждение в рамках проекта fsd-shopping-cart + docs.github.com
 created: 2026-05-14
-updated: 2026-07-03
+updated: 2026-10-21
 difficulty: intermediate
 ---
 

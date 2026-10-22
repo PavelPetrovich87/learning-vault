@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 mastery: beginner
 tags: [ci-cd, authentication, deployment, security, github-actions, aws, oidc, tokens]
 source: Обсуждение сценариев деплоя и безопасности
 created: 2026-05-15
-updated: 2026-07-03
+updated: 2026-10-21
 difficulty: advanced
 ---
 

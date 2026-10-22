@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 3 — подписка" id="ex-4-subscribe">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 3 (сложный): подписка на канал — фича; просмотр видео — нет" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (видеоплатформа)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Три кандидата в «фичи»:&#xa;&#xa;1. Кнопка «подписаться» — на странице канала и в карточке рекомендуемого.&#xa;&#xa;2. «Смотреть видео» — только страница просмотра.&#xa;&#xa;3. «Понравилось» (лайк) — страница просмотра и карточки в истории." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма по трём кандидатам" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. «Подписаться»: действие ✓, два потребителя ✓, «means the same thing from either place» ✓ → features/subscribe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. «Смотреть видео»: это ЭКРАН (роут), не действие над сущностью с нескольких страниц → pages/watch. «не всё — фича» + «single use → keep in the page»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="180" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. «Понравилось»: действие ✓, два потребителя ✓, стабильная граница ✓ → features/like-video (как favorite-article в визуализаторе, этап 6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="290" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/&#xa;├── features/&#xa;│   ├── subscribe/&#xa;│   │   ├── ui/SubscribeButton.tsx&#xa;│   │   ├── api/subscribe.ts&#xa;│   │   └── model/…&#xa;│   └── like-video/&#xa;│       └── …&#xa;├── pages/&#xa;│   ├── watch/ui/WatchPage.tsx     ← экран просмотра:&#xa;│   │      тут композиция фич и сущностей&#xa;│   ├── channel/ui/ChannelPage.tsx&#xa;│   └── history/ui/HistoryList.tsx&#xa;└── entities/channel/             ← данные канала (ур. 3)" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// features/subscribe/ui/SubscribeButton.tsx&#xa;import { subscribed, unsubscribed } from &quot;../model/subscription&quot;;&#xa;&#xa;type Props = { channelId: string; initial: boolean };&#xa;&#xa;export const SubscribeButton = ({ channelId, initial }: Props) =&gt; {&#xa;  const [on, setOn] = useState(initial);        // оптимистично&#xa;  return (&#xa;    &lt;button className={on ? &quot;subbed&quot; : &quot;&quot;}&#xa;      onClick={() =&gt; { setOn(!on); (on ? unsubscribed : subscribed)(channelId); }}&gt;&#xa;      {on ? &quot;Вы подписаны&quot; : &quot;Подписаться&quot;}&#xa;    &lt;/button&gt;&#xa;  );&#xa;};&#xa;&#xa;// pages/channel/ui/ChannelPage.tsx и карточка рекомендуемого&#xa;// зовут одну и ту же кнопку — «subscribe means the same&#xa;// thing from either place»" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="420" width="420" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Почему «смотреть видео» — не фича?&#xa;&#xa;Фича — ДЕЙСТВИЕ с несколькими потребителями. Просмотр — это роут/экран: один адрес приложения, композиция из сущностей (video, channel) и фич (like, subscribe). Его «единственный потребитель» — сам пользователь. «Не всё — фича» — и не всякий глагол из UI — фича: глагол должен быть действием, а не навигацией. 🟡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="450" width="700" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: features/{subscribe, like-video}, pages/watch. Тест «глагол + несколько страниц» отсеивает навигацию: экран остаётся страницей. Обратное внимание: сущность channel нужна обеим фичам — она строго ниже (уровень 3)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="700" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -12,5 +12,5 @@
   "useMarkdownLinks": false,
   "newLinkFormat": "shortest",
   "trashOption": "system",
-  "promptDelete": true
+  "promptDelete": false
 }

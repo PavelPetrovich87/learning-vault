@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 3 — карточки-копии" id="ex-2-card-copies">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="880" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 3 (сложный): две карточки видео — копия, не извлечение" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="16" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Видеоплатформа. Карточка видео нужна на главной и в поиске. Внешне похожи, но:&#xa;&#xa;• на главной — крупный превью-баннер и «новое»;&#xa;• в поиске — сниппет совпадения с запросом и время просмотра.&#xa;&#xa;Рука тянется сделать «общую» карточку." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Шаг 1: 2+ страниц — но это не «одна карточка в двух местах», а две похожие копии с разными причинами меняться" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Extraction rule (3 условия): «used in multiple places right now» — вроде да, но это не один код: «two similar copies that keep drifting apart stay in their pages»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="195" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Snapshot 1: «Extracting now would force two cards that want to differ into one component that has to serve both» → копии валидны" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="310" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/pages/&#xa;├── home/&#xa;│   └── ui/&#xa;│       ├── HomePage.tsx&#xa;│       └── VideoCard.tsx    ← копия 1: превью-баннер,&#xa;│                            бейдж «новое»&#xa;└── search/&#xa;    └── ui/&#xa;        ├── SearchPage.tsx&#xa;        └── VideoCard.tsx    ← копия 2: сниппет запроса,&#xa;                             время просмотра" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// pages/search/ui/VideoCard.tsx — копия 2&#xa;import { VideoDTO } from &quot;@/shared/api/video&quot;;&#xa;&#xa;type Props = { video: VideoDTO; query: string };&#xa;&#xa;export const VideoCard = ({ video, query }: Props) =&gt; (&#xa;  &lt;article&gt;&#xa;    &lt;MatchSnippet text={video.title} query={query} /&gt;&#xa;    &lt;span&gt;{formatDuration(video.duration)} · смотрел {video.progress}%&lt;/span&gt;&#xa;  &lt;/article&gt;&#xa;);&#xa;&#xa;// у копии 1 (home) другие пропсы и другой шаблон —&#xa;// объединять их сейчас = компонент «на все случаи»" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="370" width="420" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Когда копии перестанут быть валидными?&#xa;&#xa;Когда появится правило, обязанное жить согласованно (Snapshot 2 walkthrough): маркетинг меняет смысл «на первой полке», одна копия обновлена, вторая — нет, страницы противоречат друг другу. Тогда extraction rule выполнена → entities (уровень 3). Дрейф деталей оформления — не такой сигнал." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="700" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: две копии в своих слайсах. «Второй потребитель» сам по себе не открывает слой — слой зарабатывается стабильной ответственностью, которой нужен один дом. Общий запрос fetchVideos при этом может уехать в shared/api — движение кода вниз не то же самое, что открытие слоя." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="600" width="700" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

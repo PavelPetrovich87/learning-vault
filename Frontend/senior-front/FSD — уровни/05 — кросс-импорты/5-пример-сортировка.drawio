@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.000Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 1 — сортировка" id="ex-5-sortbar">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="840" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 1 (простой): странице поиска нужен SortBar из каталога → свой в своём слайсе" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (магазин)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="В pages/catalog уже есть SortBar (сортировка товарной сетки). Новая страница поиска хочет такой же.&#xa;&#xa;Рука пишет: import { SortBar } from &quot;@/pages/catalog&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Это кросс-импорт: pages/search → pages/catalog — слайсы одного слоя. zero coupling: «слайсы задуманы как независимые» [FSD]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Шаг 1/extraction rule: это «второй потребитель»? Виды лишь похожи — у поиска своя сортировка (релевантность) и своё поведение → копии валидны" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="195" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Если вид действительно обязан быть одним (дизайн-система) → это уже не pages-код: общий вид уезжает ниже (entities/ui — уровень 3), обе страницы импортируют вниз" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="310" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/pages/&#xa;├── catalog/&#xa;│   └── ui/&#xa;│       ├── CatalogPage.tsx&#xa;│       └── SortBar.tsx      ← копия 1: цена/популярность&#xa;└── search/&#xa;    └── ui/&#xa;        ├── SearchPage.tsx&#xa;        └── SortBar.tsx      ← копия 2: релевантность/дата" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// ❌ pages/search/ui/SearchPage.tsx — НАРУШЕНИЕ (красная стрелка)&#xa;import { SortBar } from &quot;@/pages/catalog&quot;;   // соседний слайс!&#xa;&#xa;// ✅ pages/search/ui/SearchPage.tsx&#xa;import { SortBar } from &quot;./SortBar&quot;;          // свой — относительный путь&#xa;&#xa;// ✅ pages/search/ui/SortBar.tsx — своя сортировка&#xa;type SortKey = &quot;relevance&quot; | &quot;date&quot;;   // у каталога: &quot;price&quot; | &quot;popular&quot;&#xa;export const SortBar = ({ value, onChange }: {&#xa;  value: SortKey; onChange: (k: SortKey) =&gt; void;&#xa;}) =&gt; ( /* кнопки сортировки поиска */ );" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="340" width="420" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="«Общее место появится» — когда?&#xa;&#xa;Когда сортировка станет обязанной к согласованности (дизайн-система, синхронные правки) — но тогда её дом не pages, а ниже: shared/ui (без бизнеса) или entities/catalog/ui. Как TagList в визуализаторе (4.4 → этап 5)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="700" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: свой SortBar в pages/search. Слайсы одного слоя не знают друг о друге; похожий вид — не тот же вид. Дублирование здесь дешевле связности." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="590" width="700" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s2" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

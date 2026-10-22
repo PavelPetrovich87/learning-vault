@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: archived
 tags: [system-design, networking, load-balancing, scalability, availability]
 source: Udemy System Design Course
 created: 2026-06-30
 difficulty: beginner
-updated: 2026-06-30
+updated: 2026-10-21
 ---
 
 # 🧠 Topic: Introduction to Load Balancing

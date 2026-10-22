@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2026-09-06T00:00:00.00.040Z" agent="fsd-levels" version="24.7.7">
+  <diagram name="Пример 1 — избранное" id="ex-4-favorites">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Пример 1 (простой): «в избранное» на карточке и в каталоге → features/add-to-favorites" style="text;html=1;align=center;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="16" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="givenLbl" value="Дано (магазин)" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="given" value="Кнопка «в избранное»: сердечко + запрос + оптимистичное переключение состояния.&#xa;&#xa;Нужна на карточке товара (уровень 3) и в списке каталога. «В избранное» значит одно и то же из обоих мест." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="stepsLbl" value="Прогон алгоритма" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="1. Шаг 3-а: полное действие — «пользователь хочет добавить товар в избранное»: кнопка + запрос + оптимистичное состояние = одно действие" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2. Шаг 3-б/в: два потребителя сейчас; «favoriting means the same thing from either place» — граница стабильна" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="195" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3. Запрос едет с фичей: он сам юз-кейс (POST /favorites), не общий CRUD — «The request goes with the feature because it is the … use case itself»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="400" y="290" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="resLbl" value="Итог" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#334155" vertex="1" parent="1">
+          <mxGeometry x="820" y="60" width="420" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tree" value="src/features/add-to-favorites/&#xa;├── ui/&#xa;│   └── FavoriteButton.tsx&#xa;├── api/&#xa;│   └── add-to-favorites.ts   ← сам юз-кейс&#xa;├── model/&#xa;│   └── favorite-state.ts     ← оптимистичное&#xa;│                              переключение&#xa;└── index.ts&#xa;&#xa;потребители: entities/product/ui/ProductCard&#xa;            pages/catalog/ui/CatalogGrid" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="90" width="420" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="code1" value="// features/add-to-favorites/model/favorite-state.ts&#xa;import { createEvent, createStore } from &quot;effector&quot;;&#xa;&#xa;export const favoriteToggled = createEvent&lt;string&gt;();&#xa;export const $pendingIds = createStore&lt;Set&lt;string&gt;&gt;(new Set())&#xa;  .on(favoriteToggled, (set, id) =&gt; {&#xa;    const next = new Set(set);          // оптимистично:&#xa;    next.has(id) ? next.delete(id)       // переключаем сразу,&#xa;      : next.add(id);                    // откат — при ошибке&#xa;    return next;&#xa;  });&#xa;&#xa;// features/add-to-favorites/ui/FavoriteButton.tsx&#xa;export const FavoriteButton = ({ productId }: { productId: string }) =&gt; (&#xa;  &lt;button onClick={() =&gt; favoriteToggled(productId)}&gt;♥&lt;/button&gt;&#xa;);" style="whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=10.5;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#64748b;spacingLeft=10;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="820" y="390" width="420" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="warn" value="Кто кого импортирует?&#xa;&#xa;Фича импортируется СВЕРХУ: страницами и — в нашем случае — карточкой сущности через СЛОТ (уровень 3: onAdd). Обратное запрещено: entities → features было бы импортом вверх. Карта стрелок: pages → features → entities → shared." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontSize=12;align=left;spacing=10;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="700" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict" value="Вердикт: features/add-to-favorites. Паттерн Snapshot 3: кнопка + запрос + состояние образуют действие; второй потребитель на другой странице — триггер проверки, extraction rule — пропуск." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacing=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="580" width="700" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="eg1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="given" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#64748b;dashed=1" edge="1" parent="1" source="s3" target="tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

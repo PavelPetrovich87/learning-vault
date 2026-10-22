@@ -1,10 +1,10 @@
 ---
-status: analyzing
+status: stable
 mastery: beginner
 tags: [hexagonal-architecture, data-layer, repository-pattern, driven-port, backend]
 source: Hexagonal Architecture / Repository Pattern / Ports and Adapters
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-10-21
 difficulty: intermediate
 ---
 
